@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3f83fdff2382e47951edb5054a0904, type: 3}
+  m_Name: AddressableConfigsCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.Addressables.AddressableConfigsCatalog
+  _progressServiceConfig:
+    m_AssetGUID: 9b11c23cd246eaa419923984716a5db3
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _advertisementConfig:
+    m_AssetGUID: c924e21d3c5effc468bd9182c16f3b95
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _notificationsConfig:
+    m_AssetGUID: dfce54507e5f5a1438d8974a405f79d0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _scenesAddresses:
+    m_AssetGUID: 63dcbf310adda344380b1800e50deef8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _prefabAddresses:
+    m_AssetGUID: 55412fefbf42b8340ae45c01d22a9151
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _playerProfileConfig:
+    m_AssetGUID: 64d57e5b4e7e4389b82c1d03649762b0
+    m_SubObjectName:
+    m_SubObjectType:
+    m_SubObjectGUID:
+    m_EditorAssetChanged: 0
+  _coreMusicConfig:
+    m_AssetGUID: 02c636d4e25227e43973af23e41ac092
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _mapNavigationConfig:
+    m_AssetGUID: c90f84c43a28cd14eb2bbe1057ca2cd5
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _timeConfig:
+    m_AssetGUID: 61338b773973794458218a6402028d61
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _sceneMusicConfig:
+    m_AssetGUID: 5ef120d652ad2e14e9cd577ac526c7bc
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _currenciesDatabase:
+    m_AssetGUID: 2b8c710d3eca7584a9c2577df1c7d77f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _currencyProgressConfig:
+    m_AssetGUID: 77a4bdca97354a8d84c9878ec6140c23
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _dailyRewardConfig:
+    m_AssetGUID: 71e454e05e0701f4681e5aa7c198dcfd
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _particlesStorageConfig:
+    m_AssetGUID: b00ea1366f205a04980c9aa8c9568235
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _featureAccessConfig:
+    m_AssetGUID: 03d74db35bb2c504d94cd46ad63033bf
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _buildingUpgradeConfig:
+    m_AssetGUID: 193ad59b42dfbd34f9e1569b2505e575
+    m_SubObjectName:
+    m_SubObjectType:
+    m_SubObjectGUID:
+    m_EditorAssetChanged: 0
+  _trafficConfig:
+    m_AssetGUID: 262faa0ebecf4c84b88229ec0f30f185
+    m_SubObjectName:
+    m_SubObjectType:
+    m_SubObjectGUID:
+    m_EditorAssetChanged: 0
+  _hexGameLevelsConfig:
+    m_AssetGUID: 0a9cd9e4416f4f9484dae87429c1f50b
+    m_SubObjectName:
+    m_SubObjectType:
+    m_SubObjectGUID:
+    m_EditorAssetChanged: 0
+  _hexMaterialsConfig:
+    m_AssetGUID: 6d8c07c28e9f42e8ac6419f876d2caad
+    m_SubObjectName:
+    m_SubObjectType:
+    m_SubObjectGUID:
+    m_EditorAssetChanged: 0
+  _shopConfig:
+    m_AssetGUID: 254cad6c2d87469793ff9a274753b2d1
+    m_SubObjectName:
+    m_SubObjectType:
+    m_SubObjectGUID:
+    m_EditorAssetChanged: 0
+  _scenariosStorageConfig:
+    m_AssetGUID: 2fca3d24aee58964fa6463cf0ec41c1d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _charactersStorageConfig:
+    m_AssetGUID: 2ad4d7a5ea885fd45bf5c2974df86540
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _dialoguesStorageConfig:
+    m_AssetGUID: a4240e11212636747807458cecf34923
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _dialoguePresentationConfig:
+    m_AssetGUID: fe615be3025cf4f4e88d3d10419dd090
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _localeSpriteDatabase:
+    m_AssetGUID: 13975a8b439abda4a8dfec8142855995
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0

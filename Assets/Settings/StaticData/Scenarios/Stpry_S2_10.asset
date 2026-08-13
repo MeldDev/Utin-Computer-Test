@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aea44333d8d99c4a941679de411a763, type: 3}
+  m_Name: Stpry_S2_10
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.Scenarios.ScenarioConfig
+  _scenarioId:
+    _value: 0fdb046a97ecc4b1c84d4dbcfd789c21
+  _triggers:
+  - rid: 8108535931025227911
+  - rid: 6331058359158440100
+  _conditions:
+  - rid: 6331058359158440099
+  - rid: 7800000000000000001
+  _actions:
+  - rid: 8108535908059578480
+  references:
+    version: 2
+    RefIds:
+    - rid: 6331058359158440099
+      type: {class: TaskStatusConditionParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Conditions, asm: Assembly-CSharp}
+      data:
+        Inverted: 0
+        PlacementId: b4ed69b5fa3c46c8abc22d3a211e4dfa
+        ExpectedStatus: 2
+    - rid: 6331058359158440100
+      type: {class: MechanicReadyTriggerParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Triggers, asm: Assembly-CSharp}
+      data:
+        MechanicId: 1
+    - rid: 7800000000000000001
+      type: {class: TaskStatusConditionParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Conditions, asm: Assembly-CSharp}
+      data:
+        Inverted: 1
+        PlacementId: afb2d00f033c45769ca3ccb782deb71e
+        ExpectedStatus: 1
+    - rid: 8108535908059578480
+      type: {class: SetScenarioObjectStateActionParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Actions, asm: Assembly-CSharp}
+      data:
+        ExecutionPolicy: 1
+        ScenarioObjectId: Story_Sector2
+        StateId: BossWalk
+        DurationSeconds: 3
+        WaitForBlockingWindows: 0
+        BlockingLayers: 00000000010000000300000004000000
+    - rid: 8108535931025227911
+      type: {class: TaskLifecycleTriggerParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Triggers, asm: Assembly-CSharp}
+      data:
+        PlacementId: b4ed69b5fa3c46c8abc22d3a211e4dfa
+        Event: 2

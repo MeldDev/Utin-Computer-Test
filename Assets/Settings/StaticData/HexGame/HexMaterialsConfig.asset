@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e5b3e6c4d24f9d954f4eb031b8326a, type: 3}
+  m_Name: HexMaterialsConfig
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.HexGame.HexMaterialsConfig
+  _materials:
+  - _type: 0
+    _hexagonMaterial: {fileID: 2100000, guid: 2a9cf8dea704e994fb12a803c7673329, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671953082769408
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 829e047316fa4a049b3093a641555077
+      m_SubObjectName: WhiteHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 3
+    _hexagonMaterial: {fileID: 2100000, guid: 8893e8443ebe128428d41084f5025cda, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671730432335872
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: b0e12e0d916af4a4eb8050da898e2725
+      m_SubObjectName: YellowHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 2
+    _hexagonMaterial: {fileID: 2100000, guid: d12a6f95c8ca5534d88ba6784b484f3a, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671791467847680
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 39de9d270b32f364e85e86d3279c0757
+      m_SubObjectName: OrangeHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 1
+    _hexagonMaterial: {fileID: 2100000, guid: 359ba030ec5ab9941bc2d065356ec7f7, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671571615014912
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 9fba81e666c570242a4512764eb1dc5a
+      m_SubObjectName: RedHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 4
+    _hexagonMaterial: {fileID: 2100000, guid: 2c66414705c7e9744a36de945bc0b99d, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671857284866048
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 1608347d9f6eb504887509863e50d992
+      m_SubObjectName: GreenHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 5
+    _hexagonMaterial: {fileID: 2100000, guid: 6eb883f5c76648f4c9b20cfffc995723, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671885260873728
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 2b6845b187e4c6749a2877b1d1d2f1ca
+      m_SubObjectName: BlueHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 6
+    _hexagonMaterial: {fileID: 2100000, guid: a431c962107362b449359f9d4b4dc7c1, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671748983742464
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 39bc7ac381ad1b24faf0032764dce196
+      m_SubObjectName: CyanHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 7
+    _hexagonMaterial: {fileID: 2100000, guid: 40065e73daa2e60429090f155317a690, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671825244577792
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 7971457791973114e9cf7b4580c27e39
+      m_SubObjectName: PurpleHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 8
+    _hexagonMaterial: {fileID: 2100000, guid: 25a9f7d12aab95d44805024480b6c20d, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671929665970176
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 2f817260e1b04d94bb6a36bc28aef03b
+      m_SubObjectName: PinkHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - _type: 9
+    _hexagonMaterial: {fileID: 2100000, guid: d4151fb91587f2b499c176aa440d5fa0, type: 2}
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _name:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 212671767233159168
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _icon:
+      m_AssetGUID: 85259054fb9b4b548b318d69e1bfbc30
+      m_SubObjectName: BlackHex
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  references:
+    version: 2
+    RefIds: []

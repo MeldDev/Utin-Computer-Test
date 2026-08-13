@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aea44333d8d99c4a941679de411a763, type: 3}
+  m_Name: Stpry_S2_9
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.Scenarios.ScenarioConfig
+  _scenarioId:
+    _value: 714de9a1723344c32bc8e593e8ae8a60
+  _triggers:
+  - rid: 8108535931025227911
+  - rid: 6331058359158440097
+  _conditions:
+  - rid: 6331058359158440098
+  - rid: 7800000000000000001
+  _actions:
+  - rid: 8108535908059578480
+  references:
+    version: 2
+    RefIds:
+    - rid: 6331058359158440097
+      type: {class: MechanicReadyTriggerParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Triggers, asm: Assembly-CSharp}
+      data:
+        MechanicId: 1
+    - rid: 6331058359158440098
+      type: {class: TaskStatusConditionParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Conditions, asm: Assembly-CSharp}
+      data:
+        PlacementId: b4ed69b5fa3c46c8abc22d3a211e4dfa
+        ExpectedStatus: 1
+    - rid: 8108535908059578480
+      type: {class: SetScenarioObjectStateActionParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Actions, asm: Assembly-CSharp}
+      data:
+        ExecutionPolicy: 1
+        ScenarioObjectId: Story_Sector2
+        StateId: BossSecond
+    - rid: 8108535931025227911
+      type: {class: TaskLifecycleTriggerParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Triggers, asm: Assembly-CSharp}
+      data:
+        PlacementId: b4ed69b5fa3c46c8abc22d3a211e4dfa
+        Event: 1
+    - rid: 7800000000000000001
+      type: {class: TaskStatusConditionParameters, ns: UtinComputerTest.Gameplay.Scenarios.Parameters.Conditions, asm: Assembly-CSharp}
+      data:
+        Inverted: 1
+        PlacementId: 3446f12c3a3e4beeb1d70c3c53ba62bc
+        ExpectedStatus: 1

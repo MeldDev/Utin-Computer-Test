@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f88701b2770d6841a3ca80bd30a6434, type: 3}
+  m_Name: DailyRewardConfig
+  m_EditorClassIdentifier: 
+  DailyRewards:
+  - Day: 0
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: 767316a9a37abc34694c3086d846f668, type: 2}
+        _amount:
+          mantissa: 1
+          exponent: 1
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+  - Day: 1
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: ee6bd74caa1b8e14493b6b7e1aee6b46, type: 2}
+        _amount:
+          mantissa: 2
+          exponent: 0
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+  - Day: 2
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: 767316a9a37abc34694c3086d846f668, type: 2}
+        _amount:
+          mantissa: 2
+          exponent: 1
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+  - Day: 3
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: ee6bd74caa1b8e14493b6b7e1aee6b46, type: 2}
+        _amount:
+          mantissa: 2
+          exponent: 0
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+  - Day: 4
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: 767316a9a37abc34694c3086d846f668, type: 2}
+        _amount:
+          mantissa: 3
+          exponent: 1
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+  - Day: 5
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: ee6bd74caa1b8e14493b6b7e1aee6b46, type: 2}
+        _amount:
+          mantissa: 2
+          exponent: 0
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+  - Day: 6
+    RewardsItems:
+      _items:
+      - _template: {fileID: 11400000, guid: 767316a9a37abc34694c3086d846f668, type: 2}
+        _amount:
+          mantissa: 4
+          exponent: 1
+        _durationMinutes: 0
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}
+      - _template: {fileID: 11400000, guid: c6677baec8118fd4390e56990762b23a, type: 2}
+        _amount:
+          mantissa: 2
+          exponent: 0
+        _durationMinutes: 60
+        _iconOverride: {fileID: 0}
+        _tokenId: 0
+        _lootboxId: 0
+        _capoConfig: {fileID: 0}

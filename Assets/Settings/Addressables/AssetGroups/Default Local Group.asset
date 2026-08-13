@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: ee3e56b2a61dbfd469f23f3939194c12
+  m_SerializeEntries:
+  - m_GUID: 0a9cd9e4416f4f9484dae87429c1f50b
+    m_Address: Assets/Settings/StaticData/HexGame/HexGameLevelsConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 193ad59b42dfbd34f9e1569b2505e575
+    m_Address: Assets/Settings/StaticData/Map/BuildingUpgradeConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d8c07c28e9f42e8ac6419f876d2caad
+    m_Address: Assets/Settings/StaticData/HexGame/HexMaterialsConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9ab282e8c96e6d14f81247351c691921, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 372962da97aa4fb428c91e5f670c0bef, type: 2}
+    - {fileID: 11400000, guid: 6760ce2b8f4a67f4595b2944462a02e5, type: 2}

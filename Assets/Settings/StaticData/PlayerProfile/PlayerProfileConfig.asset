@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dff8ecb834042699dfc7f9362787213, type: 3}
+  m_Name: PlayerProfileConfig
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.PlayerProfile.PlayerProfileConfig
+  _generatedNamePrefix: player_
+  _generatedNumberMin: 10000
+  _generatedNumberMaxExclusive: 100000
+  _maximumNameLength: 15
+  _avatars:
+  - _id: gangster_1
+    _sprite:
+      m_AssetGUID: d9b017cbc68034433b14d6744a2d6a59
+      m_SubObjectName:
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID:
+      m_EditorAssetChanged: 0
+    _requiredLevel: 1
+  - _id: gangster_2
+    _sprite:
+      m_AssetGUID: 8106f9ed5d6e8441ba79374368921f5a
+      m_SubObjectName: Dummy2_0
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID:
+      m_EditorAssetChanged: 0
+    _requiredLevel: 3
+  - _id: gangster_3
+    _sprite:
+      m_AssetGUID: b5874f73490664b2b9f25bb1facca950
+      m_SubObjectName: Dummy3_0
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID:
+      m_EditorAssetChanged: 0
+    _requiredLevel: 5
+  _frames:
+  - _id: frame_default
+    _sprite:
+      m_AssetGUID: 7f11b18e5f83543adb67b969243be613
+      m_SubObjectName: avatar-frame
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID:
+      m_EditorAssetChanged: 0
+    _requiredLevel: 1
+  - _id: frame_orange
+    _sprite:
+      m_AssetGUID: b4278bef1684f4c3e8f5c405ecd9ef27
+      m_SubObjectName: gang-frame-orange
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID:
+      m_EditorAssetChanged: 0
+    _requiredLevel: 4
+  - _id: frame_purple
+    _sprite:
+      m_AssetGUID: d864776a839924c6599fa2cdd43add31
+      m_SubObjectName: gang-frame-purple
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID:
+      m_EditorAssetChanged: 0
+    _requiredLevel: 7

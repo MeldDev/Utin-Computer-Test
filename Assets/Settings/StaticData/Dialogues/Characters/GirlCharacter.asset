@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b85243f763120142af0c23de41174fe, type: 3}
+  m_Name: GirlCharacter
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.Dialogues.CharacterConfig
+  _characterId:
+    _value: 4904bc634e3b7b542b8371db63e20b5b
+  _defaultName:
+    m_TableReference:
+      m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+    m_TableEntryReference:
+      m_KeyId: 192223779981615104
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _defaultSprite:
+    m_AssetGUID: 3f72dd8fd09ea453fb38060ec274d8c1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _slotWidth: 300
+  _emotionOverrides:
+  - _emotion: 0
+    _overrideName: 0
+    _name:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _overrideSprite: 1
+    _sprite:
+      m_AssetGUID: 3f72dd8fd09ea453fb38060ec274d8c1
+      m_SubObjectName: Girl
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  - _emotion: 5
+    _overrideName: 0
+    _name:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _overrideSprite: 1
+    _sprite:
+      m_AssetGUID: bcb7f075afd8c464c8d7a977c88d176b
+      m_SubObjectName: GirlSurprized
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  - _emotion: 6
+    _overrideName: 0
+    _name:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _overrideSprite: 1
+    _sprite:
+      m_AssetGUID: 0196ddd96dafa4b11a0dcc605b3380d6
+      m_SubObjectName: GirlScared
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  - _emotion: 7
+    _overrideName: 0
+    _name:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _overrideSprite: 1
+    _sprite:
+      m_AssetGUID: a5e7ac459260b41e39b492ddc4d9a4a5
+      m_SubObjectName: GirlDulled
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  references:
+    version: 2
+    RefIds: []

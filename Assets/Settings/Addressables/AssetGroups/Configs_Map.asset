@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Configs_Map
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Configs_Map
+  m_GUID: acd4ae3dc40733145a8706b9ae653b68
+  m_SerializeEntries:
+  - m_GUID: 03d74db35bb2c504d94cd46ad63033bf
+    m_Address: Assets/Settings/StaticData/FeatureAccessConfigs/FeatureAccessConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 254cad6c2d87469793ff9a274753b2d1
+    m_Address: Assets/Settings/StaticData/Shop/ShopConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b8c710d3eca7584a9c2577df1c7d77f
+    m_Address: Assets/Settings/StaticData/Currencies/CurrenciesVisualStorageConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ef120d652ad2e14e9cd577ac526c7bc
+    m_Address: Assets/Settings/StaticData/SceneMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61338b773973794458218a6402028d61
+    m_Address: Assets/Settings/StaticData/Map/TimeConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71e454e05e0701f4681e5aa7c198dcfd
+    m_Address: Assets/Settings/StaticData/Map/DailyRewardConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80a7ee5ff85470548b02a373c533388a
+    m_Address: Assets/Settings/StaticData/Map/ChainEconomyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a36a4135712bfd747b1ca2df6159591c
+    m_Address: Assets/Settings/StaticData/Map/CharactersPrefabsConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b00ea1366f205a04980c9aa8c9568235
+    m_Address: Assets/Settings/StaticData/Map/ParticlesStorageConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c90f84c43a28cd14eb2bbe1057ca2cd5
+    m_Address: Assets/Settings/StaticData/Map/MapNavigationConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e45ce04715ee5f2429aa0cbce2c52ccd
+    m_Address: Assets/Settings/StaticData/Map/PlayerHealthConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9ab282e8c96e6d14f81247351c691921, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9b8d113572030fd4fb267178caca8a24, type: 2}
+    - {fileID: 11400000, guid: aa1392a1247e6ed4ba01d2417e03376f, type: 2}

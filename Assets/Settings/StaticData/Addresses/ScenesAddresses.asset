@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1719455178464f25b3429c1f9cc4e4aa, type: 3}
+  m_Name: ScenesAddresses
+  m_EditorClassIdentifier: 
+  <Map>k__BackingField:
+    m_AssetGUID: e454994f685ca56418dbbd9af24b2e73
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  <HexGame>k__BackingField:
+    m_AssetGUID: 5622c3d4ac1940f4a4448519ec6efee4
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  <Fight>k__BackingField:
+    m_AssetGUID: 37f3ac0f1569e624781f450e1cd4e1f8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  <Robbery>k__BackingField:
+    m_AssetGUID: 171bfd117eea8914993f1dfcdce642fd
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  <FadeTransition>k__BackingField:
+    m_AssetGUID: e40dade517259a24ba6e721c15d4759d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0

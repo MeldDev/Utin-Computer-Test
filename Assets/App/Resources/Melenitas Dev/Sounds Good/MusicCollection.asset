@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fb88ad88530994d99ab8985aa6bf88, type: 3}
+  m_Name: MusicCollection
+  m_EditorClassIdentifier: 
+  musicTracks:
+  - tag: RockMusic
+    clips:
+    - {fileID: 8300000, guid: 8178dbe99d8821b4abdc6edc7b58a3ff, type: 3}
+    compressionPreset: 0
+    forceToMono: 1
+  - tag: BattleMusic
+    clips:
+    - {fileID: 8300000, guid: 9b52b1fd6c4bd274e968bfc6e85f76e9, type: 3}
+    compressionPreset: 0
+    forceToMono: 1
+  - tag: CalmMusic
+    clips:
+    - {fileID: 8300000, guid: 4f325aa4a67a513459a2f0cac4eabd22, type: 3}
+    compressionPreset: 0
+    forceToMono: 1
+  - tag: RockFasterMusic
+    clips:
+    - {fileID: 8300000, guid: 6778f650d1d944341a85d98b76f2ae39, type: 3}
+    compressionPreset: 0
+    forceToMono: 1
+  - tag: AgressiveMusic
+    clips:
+    - {fileID: 8300000, guid: 701cce4d5a1e1fb4c9de71563d22c7f6, type: 3}
+    compressionPreset: 0
+    forceToMono: 1
+  - tag: MegaCalmMusic
+    clips:
+    - {fileID: 8300000, guid: f05e12c57f42948f8bc4e58d83b423e2, type: 3}
+    compressionPreset: 0
+    forceToMono: 1
+  - tag: LateBeatMusic
+    clips:
+    - {fileID: 8300000, guid: f77714a154ee5ec45b58957ada8e8ddf, type: 3}
+    compressionPreset: 0
+    forceToMono: 1

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d33b6b58693fc9449d519741a396c4e, type: 3}
+  m_Name: FeatureAccessConfig
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.Map.FeatureAccess.FeatureAccessConfig
+  _adSprite:
+    m_AssetGUID: 4eee5c8c6f185441989e082420048d14
+    m_SubObjectName: ads
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_SubObjectGUID: a852bbf117acd44b58523f34b75ca7b4
+    m_EditorAssetChanged: 0
+  _entries:
+  - _featureType: 0
+    _adPlacement: 4
+    _allowAd: 1
+    _allowTicket: 1
+    _allowGold: 1
+    _ticketCost: 1
+    _goldCost: 5
+    _useAdTicketDailyLimit: 1
+    _adTicketDailyLimit: 3
+  - _featureType: 2
+    _adPlacement: 1
+    _allowAd: 1
+    _allowTicket: 1
+    _allowGold: 0
+    _ticketCost: 1
+    _goldCost: 0
+    _useAdTicketDailyLimit: 0
+    _adTicketDailyLimit: 0
+  - _featureType: 3
+    _adPlacement: 3
+    _allowAd: 1
+    _allowTicket: 1
+    _allowGold: 0
+    _ticketCost: 1
+    _goldCost: 0
+    _useAdTicketDailyLimit: 0
+    _adTicketDailyLimit: 0
+  - _featureType: 4
+    _adPlacement: 3
+    _allowAd: 0
+    _allowTicket: 0
+    _allowGold: 1
+    _ticketCost: 1
+    _goldCost: 30
+    _useAdTicketDailyLimit: 0
+    _adTicketDailyLimit: 0

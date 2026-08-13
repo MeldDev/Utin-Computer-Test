@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Configs_Project
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Configs_Project
+  m_GUID: c0ca6bc199084054ead8e5457a36c805
+  m_SerializeEntries:
+  - m_GUID: 02c636d4e25227e43973af23e41ac092
+    m_Address: Assets/Settings/Audio/CoreMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13975a8b439abda4a8dfec8142855995
+    m_Address: Assets/Settings/StaticData/Localization/LocaleSpriteDatabase.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ad4d7a5ea885fd45bf5c2974df86540
+    m_Address: Assets/Settings/StaticData/Dialogues/CharactersStorageConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2fca3d24aee58964fa6463cf0ec41c1d
+    m_Address: ScenariosStorageConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55412fefbf42b8340ae45c01d22a9151
+    m_Address: Assets/Settings/StaticData/Addresses/PrefabAddresses.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63dcbf310adda344380b1800e50deef8
+    m_Address: Assets/Settings/StaticData/Addresses/ScenesAddresses.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64d57e5b4e7e4389b82c1d03649762b0
+    m_Address: Configs/PlayerProfileConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 262faa0ebecf4c84b88229ec0f30f185
+    m_Address: Configs/TrafficConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77a4bdca97354a8d84c9878ec6140c23
+    m_Address: Configs/CurrencyProgressConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b11c23cd246eaa419923984716a5db3
+    m_Address: Assets/Settings/StaticData/Progress/ProgressServiceConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4240e11212636747807458cecf34923
+    m_Address: Assets/Settings/StaticData/Dialogues/DialoguesStorageConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c924e21d3c5effc468bd9182c16f3b95
+    m_Address: Assets/Settings/StaticData/AdvertisementConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfce54507e5f5a1438d8974a405f79d0
+    m_Address: Assets/Settings/StaticData/NotificationsConfigDatabase.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe615be3025cf4f4e88d3d10419dd090
+    m_Address: Assets/Settings/StaticData/Dialogues/DialogueSettingsConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9ab282e8c96e6d14f81247351c691921, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1bf8788df76315b4c88fa3dab9d1494a, type: 2}
+    - {fileID: 11400000, guid: 570c40ed8f676ff40a572e5051856834, type: 2}

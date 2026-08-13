@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46960b18da11a1741bfdbae2fdedb486, type: 3}
+  m_Name: SceneMusicConfig
+  m_EditorClassIdentifier: 
+  entries:
+  - sceneName: Tutorial
+    tracks: 0500000000000000
+    delay: 1
+    manualControl: 1
+    playInOrder: 1
+    avoidRepeats: 1
+    replayOnReturn: 0
+  - sceneName: Map
+    tracks: 05000000
+    delay: 1
+    manualControl: 0
+    playInOrder: 1
+    avoidRepeats: 1
+    replayOnReturn: 0
+  - sceneName: Combat 2D
+    tracks: 010000000300000004000000
+    delay: 1
+    manualControl: 1
+    playInOrder: 1
+    avoidRepeats: 1
+    replayOnReturn: 0
+  - sceneName: Combat 3D
+    tracks: 010000000300000004000000
+    delay: 1
+    manualControl: 1
+    playInOrder: 1
+    avoidRepeats: 1
+    replayOnReturn: 0
+  - sceneName: Combat 3D Defense
+    tracks: 010000000300000004000000
+    delay: 1
+    manualControl: 1
+    playInOrder: 1
+    avoidRepeats: 1
+    replayOnReturn: 0

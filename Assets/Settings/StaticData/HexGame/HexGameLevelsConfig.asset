@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b280ef1b2e4483a74fcd0de8e315d8, type: 3}
+  m_Name: HexGameLevelsConfig
+  m_EditorClassIdentifier: Assembly-CSharp::UtinComputerTest.ScriptableObjects.HexGame.HexGameLevelsConfig
+  _levels:
+  - _targetPiecesCount: 100
+    _minPiecesPerStack: 3
+    _maxPiecesPerStack: 8
+    _hexColorsOnLevel: 4
+    _hexRandomColorsCount: 1
+    _allowInputDuringResolution: 1
+    _boardPrefab: {fileID: 7225845177744049525, guid: 076a622ef85990d4fa7dadb73eedd8b5, type: 3}
+  - _targetPiecesCount: 150
+    _minPiecesPerStack: 3
+    _maxPiecesPerStack: 8
+    _hexColorsOnLevel: 6
+    _hexRandomColorsCount: 2
+    _allowInputDuringResolution: 1
+    _boardPrefab: {fileID: 7225845177744049525, guid: 076a622ef85990d4fa7dadb73eedd8b5, type: 3}
+  - _targetPiecesCount: 200
+    _minPiecesPerStack: 4
+    _maxPiecesPerStack: 9
+    _hexColorsOnLevel: 8
+    _hexRandomColorsCount: 3
+    _allowInputDuringResolution: 1
+    _boardPrefab: {fileID: 7225845177744049525, guid: 076a622ef85990d4fa7dadb73eedd8b5, type: 3}
+  _animation:
+    _dragHeight: 0.7
+    _dropDuration: 0.2
+    _dropArcHeight: 0.15
+    _dropEasing:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _mergeMoveDuration: 0.25
+    _mergeNextPieceStartProgress: 0.15
+    _mergeArcHeight: 0.18
+    _mergeFlipDegrees: 180
+    _mergeStepDelay: 0.04
+    _clearPieceScaleDuration: 0.25
+    _clearNextPieceStartProgress: 0.15
+    _nextChainStepDurationMultiplier: 0.85
+    _minimumChainStepDuration: 0.15
+  _clearSameColorCount: 10
+  _scoreBaseClearScore: 15
+  _scoreExtraPieceScore: 6
+  _poundsPerScorePoint: 0.1
+  _materialRewardLossDivisor: 4
+  _localization:
+    _scoreLabel:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 207185415804805120
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _targetLabel:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 207185632994254848
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _paletteLabel:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 207185587246981120
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _resultWonTitle:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 207186223237685248
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _resultBlockedTitle:
+      m_TableReference:
+        m_TableCollectionName: GUID:3f650895c11e75e4aa7297ec7684d21c
+      m_TableEntryReference:
+        m_KeyId: 207186252719448064
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  _boosters:
+    _advertisementIcon:
+      m_AssetGUID: 4eee5c8c6f185441989e082420048d14
+      m_SubObjectName: ads
+      m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: a852bbf117acd44b58523f34b75ca7b4
+      m_EditorAssetChanged: 0
+    _boosterSettings:
+    - _boosterType: 0
+      _requiredLevel: 1
+      _icon:
+        m_AssetGUID: 386c8d7f4068c4147937e831cc38421d
+        m_SubObjectName: "ChatGPT Image 28 \u0438\u044E\u043B. 2026 \u0433., 00_27_32_1"
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - _boosterType: 1
+      _requiredLevel: 2
+      _icon:
+        m_AssetGUID: 386c8d7f4068c4147937e831cc38421d
+        m_SubObjectName: "ChatGPT Image 28 \u0438\u044E\u043B. 2026 \u0433., 00_27_32_0"
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - _boosterType: 2
+      _requiredLevel: 3
+      _icon:
+        m_AssetGUID: 386c8d7f4068c4147937e831cc38421d
+        m_SubObjectName: "ChatGPT Image 28 \u0438\u044E\u043B. 2026 \u0433., 00_27_32_2"
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - _boosterType: 3
+      _requiredLevel: 4
+      _icon:
+        m_AssetGUID: 386c8d7f4068c4147937e831cc38421d
+        m_SubObjectName: "ChatGPT Image 28 \u0438\u044E\u043B. 2026 \u0433., 00_27_32_3"
+        m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+  references:
+    version: 2
+    RefIds: []

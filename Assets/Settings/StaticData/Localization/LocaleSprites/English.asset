@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fea71124144c74815d71c64b505c25, type: 3}
+  m_Name: English
+  m_EditorClassIdentifier: 
+  <Locale>k__BackingField: {fileID: 11400000, guid: 162346809a90b234b9ec8a4719a2991e, type: 2}
+  <FlagSprite>k__BackingField:
+    m_AssetGUID: 61b1a809eefd9864d88a5633746aa923
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+
+
