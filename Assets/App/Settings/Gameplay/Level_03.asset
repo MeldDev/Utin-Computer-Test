@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e19caea7f0749c4a0b7dbbf4b2f9002, type: 3}
+  m_Name: Level_03
+  m_EditorClassIdentifier: 
+  _levelId: 3
+  _seed: 303
+  _initialEnergy: 100
+  _expectedEnergyUsage: 80
+  _sectors:
+  - energyBudget: 16
+    expectedShotsRange: {x: 1, y: 2}
+    obstaclesPerCluster: {x: 3, y: 6}
+    clusterSpacingRange: {x: 3, y: 5}
+    sectorWidthRange: {x: 4, y: 7}
+    distanceToNextSector: {x: 6, y: 9}
+  - energyBudget: 18
+    expectedShotsRange: {x: 2, y: 2}
+    obstaclesPerCluster: {x: 3, y: 6}
+    clusterSpacingRange: {x: 3, y: 5}
+    sectorWidthRange: {x: 4, y: 7}
+    distanceToNextSector: {x: 6, y: 10}
+  - energyBudget: 22
+    expectedShotsRange: {x: 1, y: 3}
+    obstaclesPerCluster: {x: 4, y: 7}
+    clusterSpacingRange: {x: 3, y: 5}
+    sectorWidthRange: {x: 4, y: 7}
+    distanceToNextSector: {x: 7, y: 11}
+  - energyBudget: 24
+    expectedShotsRange: {x: 1, y: 2}
+    obstaclesPerCluster: {x: 4, y: 8}
+    clusterSpacingRange: {x: 4, y: 5}
+    sectorWidthRange: {x: 4, y: 7}
+    distanceToNextSector: {x: 7, y: 10}
+  _distanceBetweenSectors: {x: 6, y: 12}
+  _distanceFromLastSectorToDoor: 10
+  _roadWidth: 9

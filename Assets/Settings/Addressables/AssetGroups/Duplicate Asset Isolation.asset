@@ -20,11 +20,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 19a47a1a975ddeb4992226a4867d9eb9
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Circle06.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e8a610c9e01c3648bac42585e5fc676
     m_Address: Packages/com.esotericsoftware.spine.spine-unity/Runtime/spine-unity/Shaders/Spine-Skeleton.shader
     m_ReadOnly: 0
@@ -120,11 +115,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: beaff2d80f886c04bbee441e52b721a4
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Square02.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c6677baec8118fd4390e56990762b23a
     m_Address: Assets/Settings/StaticData/Rewards/Booster_Pounds_Reward.asset
     m_ReadOnly: 0
@@ -142,11 +132,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cac1eaebf02bb405993f085ba8333fb6
     m_Address: Assets/Settings/StaticData/Rewards/Swag_Reward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d0af66a9d145d5f438be94e94354e0e4
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Circle05.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -172,16 +157,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ee6bd74caa1b8e14493b6b7e1aee6b46
     m_Address: Assets/Settings/StaticData/Rewards/Weapon_Reward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f48017ca00c799441ac623b3610a6468
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/dropsui.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fa7777da9f2101d4898e23c5e4b0010d
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/drop.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: Shared_group
   m_GUID: ed6b0bffed6354733ae5628420ba5fc5
   m_SerializeEntries:
-  - m_GUID: 098eca53dfcb7b14989fd25bda5a8314
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Circle01.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 227ac21f7763c00489cc458e3938e326
     m_Address: Assets/Plugins/UIParticleConverter/Runtime/Resources/Shaders/UIScreen.shader
     m_ReadOnly: 0
@@ -31,59 +26,9 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4424dda84344cd94489735f2f7bdfdbc
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Star01.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 795289555dcb36d4b99eb8c970b89e26
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Flare1_UI.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 892deaf2e1ee28e4cafd18112f565635
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Flare01.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f586378b4e144a9851e7b34d9b748ee
     m_Address: Assets/Plugins/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
       SDF.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9208f0b907763a642ab2a0a4718fa2db
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Circle03.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 99b70ef2b0acc4c44a556d238188bef2
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Star02.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a0f9a334e4afd9b4688285c27fd0e9c8
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Circle03_UI.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b27bcf37600cca24196520251965a496
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Circle02.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b3ed9e83085d95542b762dd15b306e7a
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Materials/Circles_Additive.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c1b77ffedb1987f43a8aeb4b0eecd391
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Textures/Flare02.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f7d420caf00b4e74c88b3682321312dd
-    m_Address: Assets/Plugins/Lana Studio/Hyper Casual FX/Materials/Circles_AB.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

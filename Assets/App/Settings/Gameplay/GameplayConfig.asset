@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e19caea7f0749c4a0b7dbbf4b2f9001, type: 3}
+  m_Name: GameplayConfig
+  m_EditorClassIdentifier: 
+  _mapPrefab: {fileID: 1002, guid: 04aeea3ac9ce41bea51b8858a5e30102, type: 3}
+  _obstaclePrefab: {fileID: 1004, guid: 04aeea3ac9ce41bea51b8858a5e30101, type: 3}
+  _maxEnergy: 100
+  _minimumPlayerEnergy: 5
+  _minimumShotEnergy: 4
+  _maximumShotEnergy: 30
+  _chargeSpeed: 16
+  _projectileSpeed: 18
+  _infectionStepDelay: 0.08
+  _explosionDelay: 0.22
+  _playerMoveSpeed: 8
+  _playerJumpHeight: 0.45
+  _doorOpenDistance: 5
+  _playerStopDistanceBeforeSector: 2.5
+  _clusterMinDistanceFactor: 0.35
+  _clusterMaxDistanceFactor: 0.78
+  _clusterSeparationMultiplier: 1.35
+  _placementAttempts: 24
+  _obstacleRadius: 0.45
