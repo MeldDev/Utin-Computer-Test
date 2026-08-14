@@ -141,14 +141,17 @@ namespace UtinComputerTest.Gameplay.Runtime
             return _movementCells.Count > 0;
         }
 
-        public ObstacleRuntime GetClosestPathObstacle(IReadOnlyList<ObstacleRuntime> obstacles, Vector3 playerPosition)
+        public ObstacleRuntime GetClosestPathObstacle(IReadOnlyList<ObstacleRuntime> obstacles, Vector3 playerPosition, float playerRadius)
         {
             var playerCell = GetCell(playerPosition);
+            var occupiedRadius = GetOccupiedRadiusInCells(playerRadius);
             return obstacles
-                .Where(obstacle => obstacle.IsPathTarget
+                .Where(obstacle => obstacle.BlocksPlayer
                     && obstacle.State == ObstacleState.Normal
-                    && obstacle.GridAnchor.y + obstacle.GridFootprint.y > playerCell.y)
-                .OrderBy(obstacle => obstacle.GridAnchor.y)
+                    && obstacle.GridAnchor.y + obstacle.GridFootprint.y > playerCell.y
+                    && obstacle.GridAnchor.x <= playerCell.x + occupiedRadius.x
+                    && obstacle.GridAnchor.x + obstacle.GridFootprint.x - 1 >= playerCell.x - occupiedRadius.x)
+                .OrderBy(obstacle => Vector3.SqrMagnitude(obstacle.Position - playerPosition))
                 .FirstOrDefault();
         }
 

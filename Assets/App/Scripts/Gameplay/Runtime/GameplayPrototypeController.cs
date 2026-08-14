@@ -32,6 +32,7 @@ namespace UtinComputerTest.Gameplay.Runtime
         private PlayerBallRuntime _player;
         private PlayerPathService _playerPathService;
         private ProjectileRuntime _projectile;
+        private ObstacleRuntime _projectileTarget;
         private DoorRuntime _door;
         private GeneratedGridLevelLayout _gridLayout;
         private Transform _levelRoot;
@@ -269,10 +270,12 @@ namespace UtinComputerTest.Gameplay.Runtime
             var targetObstacle = LookAtClosestPathObstacle();
             if (targetObstacle != null)
             {
+                _projectileTarget = targetObstacle;
                 _projectile.Launch(targetObstacle.Position - _projectile.Position);
             }
             else
             {
+                _projectileTarget = null;
                 _projectile.Launch(Vector3.forward);
             }
             _state = GameplayState.ProjectileFlying;
@@ -280,7 +283,8 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private ObstacleRuntime LookAtClosestPathObstacle()
         {
-            var targetObstacle = _playerPathService.GetClosestPathObstacle(_obstacles, _player.Position);
+            var playerRadius = _gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f;
+            var targetObstacle = _playerPathService.GetClosestPathObstacle(_obstacles, _player.Position, playerRadius);
             if (targetObstacle != null)
             {
                 _player.LookAt(targetObstacle.Position);
@@ -292,12 +296,17 @@ namespace UtinComputerTest.Gameplay.Runtime
         private void TickProjectile(float deltaTime)
         {
             _projectile.Tick(deltaTime);
-            var hitObstacle = _obstacles.FirstOrDefault(obstacle => obstacle.IsPathTarget && obstacle.State == ObstacleState.Normal && Vector3.Distance(obstacle.Position, _projectile.Position) <= obstacle.Radius + _projectile.Size * 0.5f);
+            var hitObstacle = _projectileTarget != null
+                && _projectileTarget.State == ObstacleState.Normal
+                && Vector3.Distance(_projectileTarget.Position, _projectile.Position) <= _projectileTarget.Radius + _projectile.Size * 0.5f
+                ? _projectileTarget
+                : null;
             if (hitObstacle != null)
             {
                 StartCoroutine(Infect(hitObstacle, _projectile.InfectionRadius));
                 _projectile.Destroy();
                 _projectile = null;
+                _projectileTarget = null;
                 _state = GameplayState.Infection;
                 return;
             }
@@ -306,6 +315,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             {
                 _projectile.Destroy();
                 _projectile = null;
+                _projectileTarget = null;
                 _state = GameplayState.Idle;
                 CheckUnableToShoot();
             }
@@ -382,7 +392,8 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private void CheckUnableToShoot()
         {
-            if (_obstacles.Any(obstacle => obstacle.IsPathTarget) && _player.Energy < _gameplayConfig.MinimumShotEnergy)
+            var playerRadius = _gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f;
+            if (_playerPathService.GetClosestPathObstacle(_obstacles, _player.Position, playerRadius) != null && _player.Energy < _gameplayConfig.MinimumShotEnergy)
             {
                 Lose();
             }
@@ -467,6 +478,8 @@ namespace UtinComputerTest.Gameplay.Runtime
                 _projectile.Destroy();
                 _projectile = null;
             }
+
+            _projectileTarget = null;
 
             foreach (var obstacle in _obstacles)
             {
