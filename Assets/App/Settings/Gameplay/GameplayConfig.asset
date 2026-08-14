@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: GameplayConfig
   m_EditorClassIdentifier: 
   _mapPrefab: {fileID: 1002, guid: 04aeea3ac9ce41bea51b8858a5e30102, type: 3}
+  _playerPrefab: {fileID: 1275919180881744842, guid: e2c07f88941495b498195335d08eb21a, type: 3}
+  _doorPrefab: {fileID: 1002, guid: 2794cfd3602541c7a655a0c40035c001, type: 3}
   _obstaclePrefab: {fileID: 1004, guid: 04aeea3ac9ce41bea51b8858a5e30101, type: 3}
   _maxEnergy: 100
   _minimumPlayerEnergy: 5
@@ -94,25 +96,28 @@ MonoBehaviour:
   _projectileSpeed: 18
   _infectionStepDelay: 0.08
   _explosionDelay: 0.22
+  _infectedObstacleMaterial: {fileID: 2100000, guid: 377be54bd742958479c06502e6215d2a, type: 2}
+  _projectileMaterial: {fileID: 2100000, guid: bc89622009002f0478cf66d410e7b25e, type: 2}
   _playerMoveSpeed: 8
   _playerJumpHeight: 0.45
   _doorOpenDistance: 5
+  _doorSpawnOffset: {x: 0, y: 0, z: 4}
   _playerStopDistanceBeforeSector: 2.5
   _playerObstacleClearance: 0.1
   _roadVisualYaw: 16
   _cameraFieldPadding: 2
   _cameraSizeMultiplier: 0.8
   _cameraDistanceToField: 90
-  _cameraPlayerViewportPosition: {x: 0.2, y: 0.18}
-  _cameraDoorViewportPosition: {x: 0.8, y: 0.82}
+  _cameraPlayerViewportPosition: {x: 0.1, y: 0.1}
+  _cameraDoorViewportPosition: {x: 0.7, y: 0.7}
   _cameraVisualFieldExtension: 30
   _playerMovementObstacleMask:
     serializedVersion: 2
     m_Bits: 256
   _requiredObstacleLayer: 8
   _decorativeObstacleLayer: 9
-  _navigationFieldSize: {x: 80, y: 120}
-  _navigationGridSize: {x: 80, y: 120}
+  _navigationFieldSize: {x: 100, y: 120}
+  _navigationGridSize: {x: 100, y: 120}
   _doorNavigationRadius: 2
   _navigationStartClearCells: 10
   _navigationDoorClearCells: 10

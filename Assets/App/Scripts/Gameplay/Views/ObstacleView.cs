@@ -4,6 +4,10 @@ namespace UtinComputerTest.Gameplay.Views
 {
     public sealed class ObstacleView : MonoBehaviour
     {
+        [SerializeField] private Renderer _renderer;
+
+        private Material _defaultMaterial;
+
         public Vector3 Position => transform.localPosition;
 
         public void SetPosition(Vector3 position)
@@ -26,8 +30,15 @@ namespace UtinComputerTest.Gameplay.Views
             gameObject.layer = layer;
         }
 
-        public void PlayInfection()
+        public void ResetVisual()
         {
+            _defaultMaterial ??= _renderer.sharedMaterial;
+            _renderer.sharedMaterial = _defaultMaterial;
+        }
+
+        public void PlayInfection(Material infectedMaterial)
+        {
+            _renderer.sharedMaterial = infectedMaterial;
             transform.localScale *= 1.15f;
         }
     }

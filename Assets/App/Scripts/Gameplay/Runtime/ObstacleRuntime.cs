@@ -16,12 +16,14 @@ namespace UtinComputerTest.Gameplay.Runtime
     {
         private readonly ObstacleView _view;
         private readonly float _radius;
+        private readonly Material _infectedMaterial;
         private readonly Subject<ObstacleRuntime> _destroyed = new();
 
-        public ObstacleRuntime(ObstacleView view, float radius, bool blocksPlayer, bool isPathTarget, Vector2Int gridAnchor, Vector2Int gridFootprint)
+        public ObstacleRuntime(ObstacleView view, float radius, bool blocksPlayer, bool isPathTarget, Vector2Int gridAnchor, Vector2Int gridFootprint, Material infectedMaterial)
         {
             _view = view;
             _radius = radius;
+            _infectedMaterial = infectedMaterial;
             BlocksPlayer = blocksPlayer;
             IsPathTarget = isPathTarget;
             GridAnchor = gridAnchor;
@@ -46,7 +48,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             }
 
             State = ObstacleState.Infected;
-            _view.PlayInfection();
+            _view.PlayInfection(_infectedMaterial);
             return true;
         }
 

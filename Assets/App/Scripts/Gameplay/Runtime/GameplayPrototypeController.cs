@@ -34,6 +34,7 @@ namespace UtinComputerTest.Gameplay.Runtime
         private ProjectileRuntime _projectile;
         private ObstacleRuntime _projectileTarget;
         private DoorRuntime _door;
+        private DoorView _doorView;
         private GeneratedGridLevelLayout _gridLayout;
         private Transform _levelRoot;
         private MapView _mapView;
@@ -60,7 +61,8 @@ namespace UtinComputerTest.Gameplay.Runtime
             _mapView = Instantiate(_gameplayConfig.MapPrefab);
             _mapView.SetVisualYaw(_gameplayConfig.RoadVisualYaw);
             _levelRoot = _mapView.GeneratedContentRoot;
-            _player = new PlayerBallRuntime(_mapView.PlayerBallView, _gameplayConfig);
+            var playerView = Instantiate(_gameplayConfig.PlayerPrefab, _mapView.transform);
+            _player = new PlayerBallRuntime(playerView, _gameplayConfig);
             _playerPathService = playerPathService;
             var input = gameObject.AddComponent<GameplayInputView>();
             input.Pressed.Subscribe(_ => BeginCharge()).AddTo(_disposables);
@@ -238,7 +240,8 @@ namespace UtinComputerTest.Gameplay.Runtime
             projectileObject.name = "Projectile";
             projectileObject.transform.SetParent(_levelRoot);
             projectileObject.transform.localPosition = _player.Position + Vector3.forward * 1.1f;
-            _projectile = new ProjectileRuntime(projectileObject, _gameplayConfig);
+            var projectileRenderer = projectileObject.GetComponent<Renderer>();
+            _projectile = new ProjectileRuntime(projectileObject, projectileRenderer, _gameplayConfig);
             _projectile.SetEnergy(0f);
             LookAtClosestPathObstacle();
             _state = GameplayState.Charging;
@@ -464,9 +467,10 @@ namespace UtinComputerTest.Gameplay.Runtime
                     var worldSize = new Vector2(generatedObstacle.Footprint.x * cellWorldSize.x, generatedObstacle.Footprint.y * cellWorldSize.y);
                     obstacleView.name = $"Obstacle {generatedObstacle.Footprint.x}x{generatedObstacle.Footprint.y}";
                     obstacleView.SetLayer(generatedObstacle.BlocksPlayer ? _gameplayConfig.RequiredObstacleLayer : _gameplayConfig.DecorativeObstacleLayer);
+                    obstacleView.ResetVisual();
                     obstacleView.SetPosition(_playerPathService.GetFootprintCenter(generatedObstacle.Anchor, generatedObstacle.Footprint, Mathf.Max(worldSize.x, worldSize.y) * 0.5f));
                     obstacleView.SetScale(new Vector3(worldSize.x, Mathf.Max(worldSize.x, worldSize.y), worldSize.y));
-                    var obstacle = new ObstacleRuntime(obstacleView, Mathf.Max(worldSize.x, worldSize.y) * 0.5f, generatedObstacle.BlocksPlayer, generatedObstacle.IsPathTarget, generatedObstacle.Anchor, generatedObstacle.Footprint);
+                    var obstacle = new ObstacleRuntime(obstacleView, Mathf.Max(worldSize.x, worldSize.y) * 0.5f, generatedObstacle.BlocksPlayer, generatedObstacle.IsPathTarget, generatedObstacle.Anchor, generatedObstacle.Footprint, _gameplayConfig.InfectedObstacleMaterial);
                     _obstacles.Add(obstacle);
                     sectorObstacles.Add(obstacle);
                 }
@@ -474,9 +478,11 @@ namespace UtinComputerTest.Gameplay.Runtime
                 _sectorObstacles.Add(sectorObstacles);
             }
 
-            _doorPosition = _playerPathService.GetCellCenter(_playerPathService.GetDoorAnchorCell(), 0.75f);
-            _mapView.DoorView.SetPosition(_doorPosition);
-            _door = new DoorRuntime(_mapView.DoorView);
+            var lastObstaclePosition = _obstacles.Max(obstacle => obstacle.Position.z);
+            _doorPosition = new Vector3(0f, 0.75f, lastObstaclePosition) + _gameplayConfig.DoorSpawnOffset;
+            _doorView = Instantiate(_gameplayConfig.DoorPrefab, _mapView.transform);
+            _doorView.SetPosition(_doorPosition);
+            _door = new DoorRuntime(_doorView);
             _door.Reset();
             _playerPathService.RebuildObstacleCells(_obstacles);
         }
@@ -490,6 +496,13 @@ namespace UtinComputerTest.Gameplay.Runtime
             }
 
             _projectileTarget = null;
+
+            if (_doorView != null)
+            {
+                Destroy(_doorView.gameObject);
+                _doorView = null;
+                _door = null;
+            }
 
             foreach (var obstacle in _obstacles)
             {
@@ -528,9 +541,10 @@ namespace UtinComputerTest.Gameplay.Runtime
                 var obstacleView = GetObstacleView();
                 obstacleView.name = "Decorative Obstacle";
                 obstacleView.SetLayer(_gameplayConfig.DecorativeObstacleLayer);
+                obstacleView.ResetVisual();
                 obstacleView.SetPosition(position);
                 obstacleView.SetScale(_gameplayConfig.ObstacleRadius * 1.5f);
-                _obstacles.Add(new ObstacleRuntime(obstacleView, _gameplayConfig.ObstacleRadius * 0.75f, false, false, Vector2Int.zero, Vector2Int.one));
+                _obstacles.Add(new ObstacleRuntime(obstacleView, _gameplayConfig.ObstacleRadius * 0.75f, false, false, Vector2Int.zero, Vector2Int.one, _gameplayConfig.InfectedObstacleMaterial));
             }
         }
 

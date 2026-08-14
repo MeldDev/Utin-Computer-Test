@@ -9,6 +9,8 @@ namespace UtinComputerTest.Gameplay.Configs
     {
         [Header("Prefabs")]
         [SerializeField] private MapView _mapPrefab;
+        [SerializeField] private PlayerBallView _playerPrefab;
+        [SerializeField] private DoorView _doorPrefab;
         [SerializeField] private ObstacleView _obstaclePrefab;
 
         [Header("Energy")]
@@ -27,11 +29,14 @@ namespace UtinComputerTest.Gameplay.Configs
         [SerializeField] private float _projectileSpeed = 18f;
         [SerializeField] private float _infectionStepDelay = 0.08f;
         [SerializeField] private float _explosionDelay = 0.22f;
+        [SerializeField] private Material _infectedObstacleMaterial;
+        [SerializeField] private Material _projectileMaterial;
 
         [Header("Player and door")]
         [SerializeField] private float _playerMoveSpeed = 8f;
         [SerializeField] private float _playerJumpHeight = 0.45f;
         [SerializeField] private float _doorOpenDistance = 5f;
+        [SerializeField] private Vector3 _doorSpawnOffset = new(0f, 0f, 4f);
         [SerializeField] private float _playerStopDistanceBeforeSector = 2.5f;
         [SerializeField] private float _playerObstacleClearance = 0.1f;
         [SerializeField] private float _roadVisualYaw = 25f;
@@ -72,6 +77,8 @@ namespace UtinComputerTest.Gameplay.Configs
 
         public float MaxEnergy => _maxEnergy;
         public MapView MapPrefab => _mapPrefab;
+        public PlayerBallView PlayerPrefab => _playerPrefab;
+        public DoorView DoorPrefab => _doorPrefab;
         public ObstacleView ObstaclePrefab => _obstaclePrefab;
         public float MinimumPlayerEnergy => _minimumPlayerEnergy;
         public float MinimumShotEnergy => _minimumShotEnergy;
@@ -80,9 +87,12 @@ namespace UtinComputerTest.Gameplay.Configs
         public float ProjectileSpeed => _projectileSpeed;
         public float InfectionStepDelay => _infectionStepDelay;
         public float ExplosionDelay => _explosionDelay;
+        public Material InfectedObstacleMaterial => _infectedObstacleMaterial;
+        public Material ProjectileMaterial => _projectileMaterial;
         public float PlayerMoveSpeed => _playerMoveSpeed;
         public float PlayerJumpHeight => _playerJumpHeight;
         public float DoorOpenDistance => _doorOpenDistance;
+        public Vector3 DoorSpawnOffset => _doorSpawnOffset;
         public float PlayerStopDistanceBeforeSector => _playerStopDistanceBeforeSector;
         public float PlayerObstacleClearance => _playerObstacleClearance;
         public float RoadVisualYaw => _roadVisualYaw;
