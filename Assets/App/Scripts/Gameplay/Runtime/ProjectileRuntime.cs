@@ -18,7 +18,7 @@ namespace UtinComputerTest.Gameplay.Runtime
         public float Size { get; private set; }
         public float InfectionRadius { get; private set; }
         public Vector3 Direction { get; private set; }
-        public Vector3 Position => _gameObject.transform.position;
+        public Vector3 Position => _gameObject.transform.localPosition;
 
         public void SetEnergy(float energy)
         {
@@ -31,11 +31,12 @@ namespace UtinComputerTest.Gameplay.Runtime
         public void Launch(Vector3 direction)
         {
             Direction = direction.normalized;
+            _gameObject.transform.localRotation = Quaternion.LookRotation(Direction);
         }
 
         public void Tick(float deltaTime)
         {
-            _gameObject.transform.position += Direction * _config.ProjectileSpeed * deltaTime;
+            _gameObject.transform.localPosition += Direction * _config.ProjectileSpeed * deltaTime;
         }
 
         public void Destroy()

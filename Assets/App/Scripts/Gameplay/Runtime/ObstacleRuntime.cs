@@ -18,15 +18,24 @@ namespace UtinComputerTest.Gameplay.Runtime
         private readonly float _radius;
         private readonly Subject<ObstacleRuntime> _destroyed = new();
 
-        public ObstacleRuntime(ObstacleView view, float radius)
+        public ObstacleRuntime(ObstacleView view, float radius, bool blocksPlayer, bool isPathTarget, Vector2Int gridAnchor, Vector2Int gridFootprint)
         {
             _view = view;
             _radius = radius;
+            BlocksPlayer = blocksPlayer;
+            IsPathTarget = isPathTarget;
+            GridAnchor = gridAnchor;
+            GridFootprint = gridFootprint;
         }
 
         public ObstacleState State { get; private set; }
         public Vector3 Position => _view.Position;
         public float Radius => _radius;
+        public bool BlocksPlayer { get; }
+        public bool IsPathTarget { get; }
+        public Vector2Int GridAnchor { get; }
+        public Vector2Int GridFootprint { get; }
+        public ObstacleView View => _view;
         public IObservable<ObstacleRuntime> Destroyed => _destroyed;
 
         public bool Infect()
@@ -51,7 +60,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             State = ObstacleState.Destroyed;
             _destroyed.OnNext(this);
             _destroyed.OnCompleted();
-            UnityEngine.Object.Destroy(_view.gameObject);
+            _view.gameObject.SetActive(false);
         }
     }
 }

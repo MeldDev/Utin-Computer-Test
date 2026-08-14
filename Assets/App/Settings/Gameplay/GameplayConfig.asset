@@ -19,6 +19,78 @@ MonoBehaviour:
   _minimumShotEnergy: 4
   _maximumShotEnergy: 30
   _chargeSpeed: 16
+  _energyToPlayerScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0.019
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 2.4
+      inSlope: 0.019
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _energyToProjectileScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.2
+      inSlope: 0
+      outSlope: 0.030000001
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 1.1
+      inSlope: 0.030000001
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _energyToInfectionRadius:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0
+      outSlope: 0.096666664
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 3.5
+      inSlope: 0.096666664
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _projectileSpeed: 18
   _infectionStepDelay: 0.08
   _explosionDelay: 0.22
@@ -26,8 +98,34 @@ MonoBehaviour:
   _playerJumpHeight: 0.45
   _doorOpenDistance: 5
   _playerStopDistanceBeforeSector: 2.5
+  _playerObstacleClearance: 0.1
+  _roadVisualYaw: 25
+  _cameraFieldPadding: 2
+  _cameraSizeMultiplier: 1.15
+  _cameraDistanceToField: 30
+  _playerMovementObstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _requiredObstacleLayer: 8
+  _decorativeObstacleLayer: 9
+  _navigationFieldSize: {x: 80, y: 120}
+  _navigationGridSize: {x: 80, y: 120}
+  _doorNavigationRadius: 2
+  _navigationStartClearCells: 10
+  _navigationDoorClearCells: 10
+  _navigationSectorLengthCells: 20
+  _navigationJumpLengthCells: 10
+  _navigationObstaclesPerSector: {x: 4, y: 7}
+  _navigationChainObstaclesPerCluster: {x: 3, y: 5}
+  _navigationPathClusterHalfWidthCells: 3
+  _navigationObstacleAreas: 010000000400000009000000
+  _navigationRandomObstacleCount: 200
+  _drawNavigationDebugGrid: 1
+  _navigationDebugHeight: 0.05
   _clusterMinDistanceFactor: 0.35
   _clusterMaxDistanceFactor: 0.78
   _clusterSeparationMultiplier: 1.35
   _placementAttempts: 24
   _obstacleRadius: 0.45
+  _decorativeObstaclesPerCluster: {x: 1, y: 3}
+  _decorativeObstacleOffsetRange: {x: 2, y: 5}

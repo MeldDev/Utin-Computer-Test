@@ -17,7 +17,7 @@ namespace UtinComputerTest.Gameplay.Views
 
         public void SetPosition(Vector3 position)
         {
-            transform.position = position;
+            transform.localPosition = position;
         }
 
         public void ResetDoor()

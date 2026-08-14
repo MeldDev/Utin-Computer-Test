@@ -15,5 +15,10 @@ namespace UtinComputerTest.Gameplay.Views
         public DoorView DoorView => _doorView;
         public GameplayDebugView DebugView => _debugView;
         public Transform GeneratedContentRoot => _generatedContentRoot;
+
+        public void SetVisualYaw(float visualYaw)
+        {
+            transform.localRotation = Quaternion.Euler(0f, visualYaw, 0f);
+        }
     }
 }

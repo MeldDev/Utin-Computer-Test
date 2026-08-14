@@ -38,6 +38,11 @@ namespace UtinComputerTest.Gameplay.Runtime
             _view.SetPosition(position);
         }
 
+        public void LookAt(Vector3 targetPosition)
+        {
+            _view.LookAt(targetPosition);
+        }
+
         private void UpdateVisual()
         {
             _view.SetScale(_config.GetPlayerScale(_energy));
