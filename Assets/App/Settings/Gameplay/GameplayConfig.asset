@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e19caea7f0749c4a0b7dbbf4b2f9001, type: 3}
   m_Name: GameplayConfig
   m_EditorClassIdentifier: 
-  _mapPrefab: {fileID: 1002, guid: 04aeea3ac9ce41bea51b8858a5e30102, type: 3}
-  _playerPrefab: {fileID: 1275919180881744842, guid: e2c07f88941495b498195335d08eb21a, type: 3}
-  _doorPrefab: {fileID: 1002, guid: 2794cfd3602541c7a655a0c40035c001, type: 3}
-  _obstaclePrefab: {fileID: 1004, guid: 04aeea3ac9ce41bea51b8858a5e30101, type: 3}
+  _mapPrefab:
+    m_AssetGUID: 04aeea3ac9ce41bea51b8858a5e30102
+  _playerPrefab:
+    m_AssetGUID: e2c07f88941495b498195335d08eb21a
+  _doorPrefab:
+    m_AssetGUID: 2794cfd3602541c7a655a0c40035c001
+  _obstaclePrefab:
+    m_AssetGUID: 04aeea3ac9ce41bea51b8858a5e30101
   _maxEnergy: 100
   _minimumPlayerEnergy: 5
   _minimumShotEnergy: 4
@@ -96,8 +100,10 @@ MonoBehaviour:
   _projectileSpeed: 18
   _infectionStepDelay: 0.08
   _explosionDelay: 0.22
-  _infectedObstacleMaterial: {fileID: 2100000, guid: 377be54bd742958479c06502e6215d2a, type: 2}
-  _projectileMaterial: {fileID: 2100000, guid: bc89622009002f0478cf66d410e7b25e, type: 2}
+  _infectedObstacleMaterial:
+    m_AssetGUID: 377be54bd742958479c06502e6215d2a
+  _projectileMaterial:
+    m_AssetGUID: bc89622009002f0478cf66d410e7b25e
   _playerMoveSpeed: 8
   _playerJumpHeight: 0.45
   _doorOpenDistance: 5

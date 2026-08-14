@@ -28,9 +28,11 @@ namespace UtinComputerTest.Gameplay.Runtime
         private readonly List<List<ObstacleRuntime>> _sectorObstacles = new();
         private readonly Stack<ObstacleView> _obstaclePool = new();
         private GameplayConfig _gameplayConfig;
-        private LevelSequence _levelSequence;
+        private GameplayLevelSequence _levelSequence;
+        private GameplayAssets _gameplayAssets;
         private PlayerBallRuntime _player;
         private PlayerPathService _playerPathService;
+        private IGameplayFlowService _gameplayFlowService;
         private ProjectileRuntime _projectile;
         private ObstacleRuntime _projectileTarget;
         private DoorRuntime _door;
@@ -52,22 +54,25 @@ namespace UtinComputerTest.Gameplay.Runtime
         private int _movementPathIndex;
         private string _movementBlockDebug = "Path not checked.";
 
-        public void Initialize(GameplayConfig gameplayConfig, LevelSequence levelSequence, GameplayDebugView debugView, GameplayCameraView cameraView, PlayerPathService playerPathService)
+        public void Initialize(GameplayConfig gameplayConfig, GameplayLevelSequence levelSequence, GameplayAssets gameplayAssets, GameplayDebugView debugView, GameplayCameraView cameraView, PlayerPathService playerPathService, IGameplayFlowService gameplayFlowService)
         {
             _gameplayConfig = gameplayConfig;
             _levelSequence = levelSequence;
+            _gameplayAssets = gameplayAssets;
             _debugView = debugView;
             _cameraView = cameraView;
-            _mapView = Instantiate(_gameplayConfig.MapPrefab);
+            _mapView = Instantiate(_gameplayAssets.MapPrefab);
             _mapView.SetVisualYaw(_gameplayConfig.RoadVisualYaw);
             _levelRoot = _mapView.GeneratedContentRoot;
-            var playerView = Instantiate(_gameplayConfig.PlayerPrefab, _mapView.transform);
+            var playerView = Instantiate(_gameplayAssets.PlayerPrefab, _mapView.transform);
             _player = new PlayerBallRuntime(playerView, _gameplayConfig);
             _playerPathService = playerPathService;
+            _gameplayFlowService = gameplayFlowService;
             var input = gameObject.AddComponent<GameplayInputView>();
             input.Pressed.Subscribe(_ => BeginCharge()).AddTo(_disposables);
             input.Released.Subscribe(_ => ReleaseCharge()).AddTo(_disposables);
-            input.RestartRequested.Subscribe(_ => RestartLevel()).AddTo(_disposables);
+            _gameplayFlowService.NextLevelRequested.Subscribe(_ => StartLevel(_levelIndex + 1)).AddTo(_disposables);
+            _gameplayFlowService.LevelRestartRequested.Subscribe(_ => RestartLevel()).AddTo(_disposables);
             StartLevel(0);
         }
 
@@ -241,7 +246,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             projectileObject.transform.SetParent(_levelRoot);
             projectileObject.transform.localPosition = _player.Position + Vector3.forward * 1.1f;
             var projectileRenderer = projectileObject.GetComponent<Renderer>();
-            _projectile = new ProjectileRuntime(projectileObject, projectileRenderer, _gameplayConfig);
+            _projectile = new ProjectileRuntime(projectileObject, projectileRenderer, _gameplayConfig, _gameplayAssets);
             _projectile.SetEnergy(0f);
             LookAtClosestPathObstacle();
             _state = GameplayState.Charging;
@@ -429,8 +434,7 @@ namespace UtinComputerTest.Gameplay.Runtime
 
                 if (_movingToDoor)
                 {
-                    _state = GameplayState.Win;
-                    StartLevel(_levelIndex + 1);
+                    Win();
                 }
                 else
                 {
@@ -447,7 +451,19 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private void Lose()
         {
+            if (_state == GameplayState.Lose)
+            {
+                return;
+            }
+
             _state = GameplayState.Lose;
+            _gameplayFlowService.ReportLevelLost();
+        }
+
+        private void Win()
+        {
+            _state = GameplayState.Win;
+            _gameplayFlowService.ReportLevelWon();
         }
 
         private void BuildLevel(GeneratedGridLevelLayout layout)
@@ -470,7 +486,7 @@ namespace UtinComputerTest.Gameplay.Runtime
                     obstacleView.ResetVisual();
                     obstacleView.SetPosition(_playerPathService.GetFootprintCenter(generatedObstacle.Anchor, generatedObstacle.Footprint, Mathf.Max(worldSize.x, worldSize.y) * 0.5f));
                     obstacleView.SetScale(new Vector3(worldSize.x, Mathf.Max(worldSize.x, worldSize.y), worldSize.y));
-                    var obstacle = new ObstacleRuntime(obstacleView, Mathf.Max(worldSize.x, worldSize.y) * 0.5f, generatedObstacle.BlocksPlayer, generatedObstacle.IsPathTarget, generatedObstacle.Anchor, generatedObstacle.Footprint, _gameplayConfig.InfectedObstacleMaterial);
+                    var obstacle = new ObstacleRuntime(obstacleView, Mathf.Max(worldSize.x, worldSize.y) * 0.5f, generatedObstacle.BlocksPlayer, generatedObstacle.IsPathTarget, generatedObstacle.Anchor, generatedObstacle.Footprint, _gameplayAssets.InfectedObstacleMaterial);
                     _obstacles.Add(obstacle);
                     sectorObstacles.Add(obstacle);
                 }
@@ -480,7 +496,7 @@ namespace UtinComputerTest.Gameplay.Runtime
 
             var lastObstaclePosition = _obstacles.Max(obstacle => obstacle.Position.z);
             _doorPosition = new Vector3(0f, 0.75f, lastObstaclePosition) + _gameplayConfig.DoorSpawnOffset;
-            _doorView = Instantiate(_gameplayConfig.DoorPrefab, _mapView.transform);
+            _doorView = Instantiate(_gameplayAssets.DoorPrefab, _mapView.transform);
             _doorView.SetPosition(_doorPosition);
             _door = new DoorRuntime(_doorView);
             _door.Reset();
@@ -523,7 +539,7 @@ namespace UtinComputerTest.Gameplay.Runtime
                 return obstacleView;
             }
 
-            return Instantiate(_gameplayConfig.ObstaclePrefab, _levelRoot);
+            return Instantiate(_gameplayAssets.ObstaclePrefab, _levelRoot);
         }
 
         private void SpawnDecorativeObstacles(GeneratedCluster cluster, float roadWidth, float playerRadius)
@@ -544,7 +560,7 @@ namespace UtinComputerTest.Gameplay.Runtime
                 obstacleView.ResetVisual();
                 obstacleView.SetPosition(position);
                 obstacleView.SetScale(_gameplayConfig.ObstacleRadius * 1.5f);
-                _obstacles.Add(new ObstacleRuntime(obstacleView, _gameplayConfig.ObstacleRadius * 0.75f, false, false, Vector2Int.zero, Vector2Int.one, _gameplayConfig.InfectedObstacleMaterial));
+                _obstacles.Add(new ObstacleRuntime(obstacleView, _gameplayConfig.ObstacleRadius * 0.75f, false, false, Vector2Int.zero, Vector2Int.one, _gameplayAssets.InfectedObstacleMaterial));
             }
         }
 

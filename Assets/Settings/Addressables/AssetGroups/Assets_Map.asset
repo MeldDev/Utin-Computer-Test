@@ -14,7 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Assets_Map
   m_GUID: 79443456cbf03144484d06c54f734347
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 04aeea3ac9ce41bea51b8858a5e30102
+    m_Address: Gameplay/MapPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2c07f88941495b498195335d08eb21a
+    m_Address: Gameplay/PlayerPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2794cfd3602541c7a655a0c40035c001
+    m_Address: Gameplay/DoorPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04aeea3ac9ce41bea51b8858a5e30101
+    m_Address: Gameplay/ObstaclePrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 377be54bd742958479c06502e6215d2a
+    m_Address: Gameplay/InfectedObstacleMaterial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc89622009002f0478cf66d410e7b25e
+    m_Address: Gameplay/ProjectileMaterial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9ab282e8c96e6d14f81247351c691921, type: 2}
   m_SchemaSet:

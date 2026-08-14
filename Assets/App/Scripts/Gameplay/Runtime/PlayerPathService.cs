@@ -8,14 +8,14 @@ namespace UtinComputerTest.Gameplay.Runtime
 {
     public sealed class PlayerPathService
     {
-        private readonly GameplayConfig _gameplayConfig;
+        private GameplayConfig _gameplayConfig;
         private readonly List<Vector2Int> _movementCells = new();
         private bool[,] _doorCells;
         private bool[,] _obstacleCells;
         private Vector2Int _gridSize;
         private Vector2 _fieldSize;
 
-        public PlayerPathService(GameplayConfig gameplayConfig)
+        public void Initialize(GameplayConfig gameplayConfig)
         {
             _gameplayConfig = gameplayConfig;
         }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UtinComputerTest.Gameplay.Views;
 
 namespace UtinComputerTest.Gameplay.Configs
@@ -8,10 +9,10 @@ namespace UtinComputerTest.Gameplay.Configs
     public sealed class GameplayConfig : ScriptableObject
     {
         [Header("Prefabs")]
-        [SerializeField] private MapView _mapPrefab;
-        [SerializeField] private PlayerBallView _playerPrefab;
-        [SerializeField] private DoorView _doorPrefab;
-        [SerializeField] private ObstacleView _obstaclePrefab;
+        [SerializeField] private AssetReferenceGameObject _mapPrefab;
+        [SerializeField] private AssetReferenceGameObject _playerPrefab;
+        [SerializeField] private AssetReferenceGameObject _doorPrefab;
+        [SerializeField] private AssetReferenceGameObject _obstaclePrefab;
 
         [Header("Energy")]
         [SerializeField] private float _maxEnergy = 100f;
@@ -29,8 +30,8 @@ namespace UtinComputerTest.Gameplay.Configs
         [SerializeField] private float _projectileSpeed = 18f;
         [SerializeField] private float _infectionStepDelay = 0.08f;
         [SerializeField] private float _explosionDelay = 0.22f;
-        [SerializeField] private Material _infectedObstacleMaterial;
-        [SerializeField] private Material _projectileMaterial;
+        [SerializeField] private AssetReferenceT<Material> _infectedObstacleMaterial;
+        [SerializeField] private AssetReferenceT<Material> _projectileMaterial;
 
         [Header("Player and door")]
         [SerializeField] private float _playerMoveSpeed = 8f;
@@ -76,10 +77,10 @@ namespace UtinComputerTest.Gameplay.Configs
         [SerializeField] private Vector2 _decorativeObstacleOffsetRange = new(2f, 5f);
 
         public float MaxEnergy => _maxEnergy;
-        public MapView MapPrefab => _mapPrefab;
-        public PlayerBallView PlayerPrefab => _playerPrefab;
-        public DoorView DoorPrefab => _doorPrefab;
-        public ObstacleView ObstaclePrefab => _obstaclePrefab;
+        public AssetReferenceGameObject MapPrefab => _mapPrefab;
+        public AssetReferenceGameObject PlayerPrefab => _playerPrefab;
+        public AssetReferenceGameObject DoorPrefab => _doorPrefab;
+        public AssetReferenceGameObject ObstaclePrefab => _obstaclePrefab;
         public float MinimumPlayerEnergy => _minimumPlayerEnergy;
         public float MinimumShotEnergy => _minimumShotEnergy;
         public float MaximumShotEnergy => _maximumShotEnergy;
@@ -87,8 +88,8 @@ namespace UtinComputerTest.Gameplay.Configs
         public float ProjectileSpeed => _projectileSpeed;
         public float InfectionStepDelay => _infectionStepDelay;
         public float ExplosionDelay => _explosionDelay;
-        public Material InfectedObstacleMaterial => _infectedObstacleMaterial;
-        public Material ProjectileMaterial => _projectileMaterial;
+        public AssetReferenceT<Material> InfectedObstacleMaterial => _infectedObstacleMaterial;
+        public AssetReferenceT<Material> ProjectileMaterial => _projectileMaterial;
         public float PlayerMoveSpeed => _playerMoveSpeed;
         public float PlayerJumpHeight => _playerJumpHeight;
         public float DoorOpenDistance => _doorOpenDistance;

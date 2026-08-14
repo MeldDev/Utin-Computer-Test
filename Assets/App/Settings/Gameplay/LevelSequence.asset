@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelSequence
   m_EditorClassIdentifier: 
   _levels:
-  - {fileID: 11400000, guid: 8e19caea7f0749c4a0b7dbbf4b2f9021, type: 2}
-  - {fileID: 11400000, guid: 8e19caea7f0749c4a0b7dbbf4b2f9022, type: 2}
-  - {fileID: 11400000, guid: 8e19caea7f0749c4a0b7dbbf4b2f9023, type: 2}
+  - m_AssetGUID: 8e19caea7f0749c4a0b7dbbf4b2f9021
+  - m_AssetGUID: 8e19caea7f0749c4a0b7dbbf4b2f9022
+  - m_AssetGUID: 8e19caea7f0749c4a0b7dbbf4b2f9023
   _loop: 1

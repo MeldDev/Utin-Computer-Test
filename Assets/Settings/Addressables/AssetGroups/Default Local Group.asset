@@ -14,22 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: ee3e56b2a61dbfd469f23f3939194c12
-  m_SerializeEntries:
-  - m_GUID: 0a9cd9e4416f4f9484dae87429c1f50b
-    m_Address: Assets/Settings/StaticData/HexGame/HexGameLevelsConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 193ad59b42dfbd34f9e1569b2505e575
-    m_Address: Assets/Settings/StaticData/Map/BuildingUpgradeConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6d8c07c28e9f42e8ac6419f876d2caad
-    m_Address: Assets/Settings/StaticData/HexGame/HexMaterialsConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9ab282e8c96e6d14f81247351c691921, type: 2}
   m_SchemaSet:

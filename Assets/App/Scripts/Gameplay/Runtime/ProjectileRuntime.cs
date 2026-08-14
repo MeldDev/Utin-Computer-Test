@@ -9,12 +9,12 @@ namespace UtinComputerTest.Gameplay.Runtime
         private readonly Renderer _renderer;
         private readonly GameplayConfig _config;
 
-        public ProjectileRuntime(GameObject gameObject, Renderer renderer, GameplayConfig config)
+        public ProjectileRuntime(GameObject gameObject, Renderer renderer, GameplayConfig config, GameplayAssets gameplayAssets)
         {
             _gameObject = gameObject;
             _renderer = renderer;
             _config = config;
-            _renderer.sharedMaterial = _config.ProjectileMaterial;
+            _renderer.sharedMaterial = gameplayAssets.ProjectileMaterial;
         }
 
         public float Energy { get; private set; }

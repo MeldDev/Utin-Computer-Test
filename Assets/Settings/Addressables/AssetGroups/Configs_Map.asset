@@ -15,58 +15,43 @@ MonoBehaviour:
   m_GroupName: Configs_Map
   m_GUID: acd4ae3dc40733145a8706b9ae653b68
   m_SerializeEntries:
-  - m_GUID: 03d74db35bb2c504d94cd46ad63033bf
-    m_Address: Assets/Settings/StaticData/FeatureAccessConfigs/FeatureAccessConfig.asset
+  - m_GUID: 6164f3859aac08046a4aec86291b1b46
+    m_Address: Gameplay/ConfigsCatalog
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 254cad6c2d87469793ff9a274753b2d1
-    m_Address: Assets/Settings/StaticData/Shop/ShopConfig.asset
+  - m_GUID: 8e19caea7f0749c4a0b7dbbf4b2f9011
+    m_Address: Gameplay/Config
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2b8c710d3eca7584a9c2577df1c7d77f
-    m_Address: Assets/Settings/StaticData/Currencies/CurrenciesVisualStorageConfig.asset
+  - m_GUID: 8e19caea7f0749c4a0b7dbbf4b2f9012
+    m_Address: Gameplay/LevelSequence
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5ef120d652ad2e14e9cd577ac526c7bc
-    m_Address: Assets/Settings/StaticData/SceneMusicConfig.asset
+  - m_GUID: 8e19caea7f0749c4a0b7dbbf4b2f9021
+    m_Address: Gameplay/Level01
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 61338b773973794458218a6402028d61
-    m_Address: Assets/Settings/StaticData/Map/TimeConfig.asset
+  - m_GUID: 8e19caea7f0749c4a0b7dbbf4b2f9022
+    m_Address: Gameplay/Level02
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 71e454e05e0701f4681e5aa7c198dcfd
-    m_Address: Assets/Settings/StaticData/Map/DailyRewardConfig.asset
+  - m_GUID: 8e19caea7f0749c4a0b7dbbf4b2f9023
+    m_Address: Gameplay/Level03
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 80a7ee5ff85470548b02a373c533388a
-    m_Address: Assets/Settings/StaticData/Map/ChainEconomyConfig.asset
+  - m_GUID: 34dfc5e5b721491fa0a8001100000011
+    m_Address: UI/Windows/WinWindow
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a36a4135712bfd747b1ca2df6159591c
-    m_Address: Assets/Settings/StaticData/Map/CharactersPrefabsConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b00ea1366f205a04980c9aa8c9568235
-    m_Address: Assets/Settings/StaticData/Map/ParticlesStorageConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c90f84c43a28cd14eb2bbe1057ca2cd5
-    m_Address: Assets/Settings/StaticData/Map/MapNavigationConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e45ce04715ee5f2429aa0cbce2c52ccd
-    m_Address: Assets/Settings/StaticData/Map/PlayerHealthConfig.asset
+  - m_GUID: 34dfc5e5b721491fa0a8001100000012
+    m_Address: UI/Windows/LoseWindow
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

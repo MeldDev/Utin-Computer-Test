@@ -25,11 +25,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2fdaa01904beb40e09ebfddd49d085ab
-    m_Address: Assets/Settings/StaticData/Progression/Tiles/Progress_Sector_1/Chunk_Sector_1_T1.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31321ba15b8f8eb4c954353edc038b1d
     m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat
     m_ReadOnly: 0
@@ -50,18 +45,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5cb02ce5406b6914f8a21c94bab1d84c
-    m_Address: Assets/Settings/StaticData/Rewards/Booster_Weapons_Reward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68e6db2ebdc24f95958faec2be5558d6
     m_Address: Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 767316a9a37abc34694c3086d846f668
-    m_Address: Assets/Settings/StaticData/Rewards/Gold_Reward.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -80,23 +65,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 924493b3e2858ff48ace5e0636cd22e3
-    m_Address: Assets/Settings/StaticData/Rewards/Token_Reward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 933532a4fcc9baf4fa0491de14d08ed7
     m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9d088c952e92a457dbcd9268cf33382c
-    m_Address: Assets/Settings/StaticData/Progression/Tiles/ProgressionUpgradeCost.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9e8c3fd12a888474e9f9d72f99f98ace
-    m_Address: Assets/Settings/StaticData/Products/Cash.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -110,28 +80,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bad9bc54669704ce0b8e6bf7201f2df0
-    m_Address: Assets/Settings/StaticData/Progression/Tiles/ProductChunk_basic.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c6677baec8118fd4390e56990762b23a
-    m_Address: Assets/Settings/StaticData/Rewards/Booster_Pounds_Reward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c7c312d7926044e6c9bed6b5f6a03ee6
-    m_Address: Assets/Settings/StaticData/Progression/Tiles/DeliveryChunk_basic.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca9f5fa95ffab41fb9a615ab714db018
     m_Address: Packages/com.unity.inputsystem/InputSystem/Plugins/PlayerInput/DefaultInputActions.inputactions
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cac1eaebf02bb405993f085ba8333fb6
-    m_Address: Assets/Settings/StaticData/Rewards/Swag_Reward.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -152,16 +102,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e823cd5b5d27c0f4b8256e7c12ee3e6d
     m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/ParticlesUnlit.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ee6bd74caa1b8e14493b6b7e1aee6b46
-    m_Address: Assets/Settings/StaticData/Rewards/Weapon_Reward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: faf83ed98151b5d45b4c18a10c0355f6
-    m_Address: Assets/Settings/StaticData/Rewards/Pounds_Reward.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
