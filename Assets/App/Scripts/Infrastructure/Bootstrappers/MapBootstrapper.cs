@@ -5,6 +5,7 @@ using UtinComputerTest.Gameplay.Configs;
 using UtinComputerTest.Gameplay.Runtime;
 using UtinComputerTest.Gameplay.Views;
 using UtinComputerTest.Infrastructure._Services.AddressablesLoader;
+using UtinComputerTest.Infrastructure._Services.SceneLoader;
 using UtinComputerTest.ScriptableObjects;
 using UtinComputerTest.UI.Windows;
 using UnityEngine;
@@ -22,9 +23,10 @@ namespace UtinComputerTest.Infrastructure.Bootstrappers
         private readonly PlayerPathService _playerPathService;
         private readonly IWindowFactory _windowFactory;
         private readonly IGameplayFlowService _gameplayFlowService;
+        private readonly ISceneContentReadiness _sceneContentReadiness;
         private readonly List<AssetReference> _acquiredAssets = new();
 
-        public MapBootstrapper(GameplayAddressables gameplayAddressables, IAddressableAssetProvider assetProvider, [InjectOptional] GameplayDebugView gameplayDebugView, GameplayCameraView gameplayCameraView, PlayerPathService playerPathService, IWindowFactory windowFactory, IGameplayFlowService gameplayFlowService)
+        public MapBootstrapper(GameplayAddressables gameplayAddressables, IAddressableAssetProvider assetProvider, [InjectOptional] GameplayDebugView gameplayDebugView, GameplayCameraView gameplayCameraView, PlayerPathService playerPathService, IWindowFactory windowFactory, IGameplayFlowService gameplayFlowService, ISceneContentReadiness sceneContentReadiness)
         {
             _gameplayAddressables = gameplayAddressables;
             _assetProvider = assetProvider;
@@ -33,6 +35,7 @@ namespace UtinComputerTest.Infrastructure.Bootstrappers
             _playerPathService = playerPathService;
             _windowFactory = windowFactory;
             _gameplayFlowService = gameplayFlowService;
+            _sceneContentReadiness = sceneContentReadiness;
         }
 
         public void Initialize()
@@ -63,6 +66,7 @@ namespace UtinComputerTest.Infrastructure.Bootstrappers
             _playerPathService.Initialize(gameplayConfig);
             var gameplayRoot = new GameObject("Gameplay Prototype");
             gameplayRoot.AddComponent<GameplayPrototypeController>().Initialize(gameplayConfig, new GameplayLevelSequence(levels, levelSequenceConfig.Loop), gameplayAssets, _gameplayDebugView, _gameplayCameraView, _playerPathService, _gameplayFlowService);
+            _sceneContentReadiness.MarkReady(SceneID.Map);
         }
 
         private async UniTask<List<LevelConfig>> LoadLevelsAsync(LevelSequence levelSequence)

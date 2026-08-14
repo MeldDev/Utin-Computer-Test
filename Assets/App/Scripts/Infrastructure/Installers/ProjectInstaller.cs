@@ -17,6 +17,7 @@ namespace UtinComputerTest.Infrastructure.Installers
         {
             Container.Bind<IAddressablesLoader>().To<AddressablesLoader>().AsSingle();
             Container.Bind<IAddressableAssetProvider>().To<AddressableAssetProvider>().AsSingle();
+            Container.Bind<ISceneContentReadiness>().To<SceneContentReadiness>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle().WithArguments(_scenesAddresses);
             Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
             Container.Bind<SceneLoadingState>().AsSingle();

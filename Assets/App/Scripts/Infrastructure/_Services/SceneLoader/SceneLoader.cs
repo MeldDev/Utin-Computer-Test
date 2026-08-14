@@ -11,15 +11,18 @@ namespace UtinComputerTest.Infrastructure._Services.SceneLoader
     {
         private readonly IAddressablesLoader _addressablesLoader;
         private readonly IAddressableAssetProvider _assetProvider;
+        private readonly ISceneContentReadiness _sceneContentReadiness;
         private readonly AssetReferenceT<ScenesAddresses> _scenesAddressesReference;
 
         public SceneLoader(
             IAddressablesLoader addressablesLoader,
             IAddressableAssetProvider assetProvider,
+            ISceneContentReadiness sceneContentReadiness,
             AssetReferenceT<ScenesAddresses> scenesAddressesReference)
         {
             _addressablesLoader = addressablesLoader;
             _assetProvider = assetProvider;
+            _sceneContentReadiness = sceneContentReadiness;
             _scenesAddressesReference = scenesAddressesReference;
         }
 
@@ -29,9 +32,11 @@ namespace UtinComputerTest.Infrastructure._Services.SceneLoader
             var scenesAddresses = await _assetProvider.LoadAsync<ScenesAddresses>(_scenesAddressesReference);
             var sceneReference = GetSceneReference(sceneId, scenesAddresses);
             var loadingScene = await _addressablesLoader.LoadSceneAsync(scenesAddresses.Loading);
+            _sceneContentReadiness.BeginLoading(sceneId);
             var loadedScene = await _addressablesLoader.LoadSceneAsync(sceneReference);
 
             SceneManager.SetActiveScene(loadedScene);
+            await _sceneContentReadiness.WaitUntilReadyAsync(sceneId);
             await _addressablesLoader.UnloadSceneAsync(loadingScene);
 
             if (previousScene.IsValid())

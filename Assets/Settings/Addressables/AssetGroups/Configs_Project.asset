@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: Configs_Project
   m_GUID: c0ca6bc199084054ead8e5457a36c805
   m_SerializeEntries:
-  - m_GUID: 02c636d4e25227e43973af23e41ac092
-    m_Address: Assets/Settings/Audio/CoreMusicConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55412fefbf42b8340ae45c01d22a9151
     m_Address: Assets/Settings/StaticData/Addresses/PrefabAddresses.asset
     m_ReadOnly: 0
