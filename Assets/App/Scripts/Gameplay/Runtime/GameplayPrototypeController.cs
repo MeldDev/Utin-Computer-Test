@@ -200,7 +200,14 @@ namespace UtinComputerTest.Gameplay.Runtime
             _player.Reset(levelConfig.InitialEnergy);
             _player.SetPosition(_playerPathService.GetCellCenter(_playerPathService.GetStartCell(_gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f), 0.75f));
             BuildLevel(_gridLayout);
-            _cameraView.FrameField(_mapView.transform, _gameplayConfig.NavigationFieldSize.x, _gameplayConfig.NavigationFieldSize.y, _gameplayConfig.CameraFieldPadding, _gameplayConfig.CameraSizeMultiplier, _gameplayConfig.CameraDistanceToField);
+            _cameraView.FrameProgression(
+                _mapView.transform.TransformPoint(_player.Position),
+                _mapView.transform.TransformPoint(_doorPosition),
+                _gameplayConfig.CameraPlayerViewportPosition,
+                _gameplayConfig.CameraDoorViewportPosition,
+                _gameplayConfig.CameraFieldPadding,
+                _gameplayConfig.CameraSizeMultiplier,
+                _gameplayConfig.CameraDistanceToField);
             _state = GameplayState.Idle;
         }
 
@@ -442,7 +449,10 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private void BuildLevel(GeneratedGridLevelLayout layout)
         {
-            _mapView.RoadView.SetLayout(_gameplayConfig.NavigationFieldSize.x, _gameplayConfig.NavigationFieldSize.y);
+            _mapView.RoadView.SetLayout(
+                _gameplayConfig.NavigationFieldSize.x,
+                _gameplayConfig.NavigationFieldSize.y + _gameplayConfig.CameraVisualFieldExtension * 2f,
+                _gameplayConfig.NavigationFieldSize.y * 0.5f);
 
             foreach (var sector in layout.Sectors)
             {

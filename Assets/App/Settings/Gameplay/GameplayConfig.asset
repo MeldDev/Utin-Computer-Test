@@ -99,10 +99,13 @@ MonoBehaviour:
   _doorOpenDistance: 5
   _playerStopDistanceBeforeSector: 2.5
   _playerObstacleClearance: 0.1
-  _roadVisualYaw: 25
+  _roadVisualYaw: 16
   _cameraFieldPadding: 2
-  _cameraSizeMultiplier: 1.15
-  _cameraDistanceToField: 30
+  _cameraSizeMultiplier: 0.8
+  _cameraDistanceToField: 90
+  _cameraPlayerViewportPosition: {x: 0.2, y: 0.18}
+  _cameraDoorViewportPosition: {x: 0.8, y: 0.82}
+  _cameraVisualFieldExtension: 30
   _playerMovementObstacleMask:
     serializedVersion: 2
     m_Bits: 256

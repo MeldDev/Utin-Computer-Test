@@ -36,8 +36,11 @@ namespace UtinComputerTest.Gameplay.Configs
         [SerializeField] private float _playerObstacleClearance = 0.1f;
         [SerializeField] private float _roadVisualYaw = 25f;
         [SerializeField] private float _cameraFieldPadding = 2f;
-        [SerializeField] private float _cameraSizeMultiplier = 1.15f;
+        [SerializeField] private float _cameraSizeMultiplier = 1f;
         [SerializeField] private float _cameraDistanceToField = 30f;
+        [SerializeField] private Vector2 _cameraPlayerViewportPosition = new(0.2f, 0.18f);
+        [SerializeField] private Vector2 _cameraDoorViewportPosition = new(0.8f, 0.82f);
+        [SerializeField] private float _cameraVisualFieldExtension = 30f;
         [SerializeField] private LayerMask _playerMovementObstacleMask = 1 << 8;
         [SerializeField] private int _requiredObstacleLayer = 8;
         [SerializeField] private int _decorativeObstacleLayer = 9;
@@ -86,6 +89,9 @@ namespace UtinComputerTest.Gameplay.Configs
         public float CameraFieldPadding => _cameraFieldPadding;
         public float CameraSizeMultiplier => _cameraSizeMultiplier;
         public float CameraDistanceToField => _cameraDistanceToField;
+        public Vector2 CameraPlayerViewportPosition => _cameraPlayerViewportPosition;
+        public Vector2 CameraDoorViewportPosition => _cameraDoorViewportPosition;
+        public float CameraVisualFieldExtension => _cameraVisualFieldExtension;
         public LayerMask PlayerMovementObstacleMask => _playerMovementObstacleMask;
         public int RequiredObstacleLayer => _requiredObstacleLayer;
         public int DecorativeObstacleLayer => _decorativeObstacleLayer;
