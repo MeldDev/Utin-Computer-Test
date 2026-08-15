@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace UtinComputerTest.Infrastructure._Services.AsyncGuard
+namespace UtinComputerTest.Infrastructure.Services.Async
 {
     public sealed class AsyncRequestGuard : IDisposable
     {

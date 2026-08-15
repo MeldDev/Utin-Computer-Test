@@ -1,4 +1,4 @@
-using UtinComputerTest.Infrastructure._Services.SceneLoader;
+using UtinComputerTest.Infrastructure.Services.SceneLoading;
 using UtinComputerTest.Infrastructure.StateMachine.States.Base;
 
 namespace UtinComputerTest.Infrastructure.StateMachine.States.Project

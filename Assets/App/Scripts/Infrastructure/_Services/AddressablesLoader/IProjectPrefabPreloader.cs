@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace UtinComputerTest.Infrastructure._Services.AddressablesLoader
+namespace UtinComputerTest.Infrastructure.Services.AddressableLoading
 {
     public interface IProjectPrefabPreloader
     {

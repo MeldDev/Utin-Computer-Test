@@ -2,7 +2,7 @@ using UtinComputerTest.Infrastructure.Bootstrappers;
 using UtinComputerTest.Gameplay.Configs;
 using UtinComputerTest.Gameplay.Runtime;
 using UtinComputerTest.Gameplay.Views;
-using UtinComputerTest.Infrastructure._Services.AddressablesLoader;
+using UtinComputerTest.Infrastructure.Services.AddressableLoading;
 using UtinComputerTest.UI.Providers;
 using UtinComputerTest.UI.Windows;
 using UnityEngine;

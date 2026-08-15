@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace UtinComputerTest.Infrastructure._Services.AddressablesLoader
+namespace UtinComputerTest.Infrastructure.Services.AddressableLoading
 {
     // Load*    — shared доступ без владения, актив живёт до конца сессии/сцены.
     // Acquire* — caller берёт владение, обязан вызвать Release.

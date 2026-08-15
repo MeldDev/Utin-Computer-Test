@@ -1,4 +1,4 @@
-namespace UtinComputerTest.Infrastructure._Services.SceneLoader
+namespace UtinComputerTest.Infrastructure.Services.SceneLoading
 {
     public enum SceneID
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using UtinComputerTest.Infrastructure._Services.AddressablesLoader;
+using UtinComputerTest.Infrastructure.Services.AddressableLoading;
 using UtinComputerTest.ScriptableObjects;
 using UtinComputerTest.UI.Providers;
 using UnityEngine;

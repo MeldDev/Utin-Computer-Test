@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace UtinComputerTest.Infrastructure._Services.SceneLoader
+namespace UtinComputerTest.Infrastructure.Services.SceneLoading
 {
     public sealed class SceneContentReadiness : ISceneContentReadiness
     {

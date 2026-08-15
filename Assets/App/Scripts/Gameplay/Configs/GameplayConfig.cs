@@ -28,6 +28,7 @@ namespace UtinComputerTest.Gameplay.Configs
 
         [Header("Projectile and infection")]
         [SerializeField] private float _projectileSpeed = 18f;
+        [SerializeField] private float _projectileSpawnDistance = 1.1f;
         [SerializeField] private float _infectionStepDelay = 0.08f;
         [SerializeField] private float _explosionDelay = 0.22f;
         [SerializeField] private AssetReferenceT<Material> _infectedObstacleMaterial;
@@ -86,6 +87,7 @@ namespace UtinComputerTest.Gameplay.Configs
         public float MaximumShotEnergy => _maximumShotEnergy;
         public float ChargeSpeed => _chargeSpeed;
         public float ProjectileSpeed => _projectileSpeed;
+        public float ProjectileSpawnDistance => _projectileSpawnDistance;
         public float InfectionStepDelay => _infectionStepDelay;
         public float ExplosionDelay => _explosionDelay;
         public AssetReferenceT<Material> InfectedObstacleMaterial => _infectedObstacleMaterial;

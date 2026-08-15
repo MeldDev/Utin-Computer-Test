@@ -7,7 +7,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-namespace UtinComputerTest.Infrastructure._Services.AddressablesLoader
+namespace UtinComputerTest.Infrastructure.Services.AddressableLoading
 {
     public class AddressablesLoader : IAddressablesLoader
     {

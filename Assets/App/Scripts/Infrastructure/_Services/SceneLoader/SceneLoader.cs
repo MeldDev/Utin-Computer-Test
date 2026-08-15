@@ -1,11 +1,11 @@
 using Cysharp.Threading.Tasks;
-using UtinComputerTest.Infrastructure._Services.AddressablesLoader;
+using UtinComputerTest.Infrastructure.Services.AddressableLoading;
 using UtinComputerTest.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
-namespace UtinComputerTest.Infrastructure._Services.SceneLoader
+namespace UtinComputerTest.Infrastructure.Services.SceneLoading
 {
     public sealed class SceneLoader : ISceneLoader
     {

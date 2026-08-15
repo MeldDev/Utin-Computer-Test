@@ -9,12 +9,15 @@ namespace UtinComputerTest.Gameplay.Runtime
         private readonly Renderer _renderer;
         private readonly GameplayConfig _config;
 
-        public ProjectileRuntime(GameObject gameObject, Renderer renderer, GameplayConfig config, GameplayAssets gameplayAssets)
+        public ProjectileRuntime(Transform parent, GameplayConfig config, GameplayAssets gameplayAssets)
         {
-            _gameObject = gameObject;
-            _renderer = renderer;
+            _gameObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            _gameObject.name = "Projectile";
+            _gameObject.transform.SetParent(parent);
+            _renderer = _gameObject.GetComponent<Renderer>();
             _config = config;
             _renderer.sharedMaterial = gameplayAssets.ProjectileMaterial;
+            _gameObject.SetActive(false);
         }
 
         public float Energy { get; private set; }
@@ -22,6 +25,14 @@ namespace UtinComputerTest.Gameplay.Runtime
         public float InfectionRadius { get; private set; }
         public Vector3 Direction { get; private set; }
         public Vector3 Position => _gameObject.transform.localPosition;
+
+        public void Prepare(Vector3 position)
+        {
+            _gameObject.transform.localPosition = position;
+            _gameObject.transform.localRotation = Quaternion.identity;
+            _gameObject.SetActive(true);
+            SetEnergy(0f);
+        }
 
         public void SetEnergy(float energy)
         {
@@ -42,7 +53,12 @@ namespace UtinComputerTest.Gameplay.Runtime
             _gameObject.transform.localPosition += Direction * _config.ProjectileSpeed * deltaTime;
         }
 
-        public void Destroy()
+        public void Deactivate()
+        {
+            _gameObject.SetActive(false);
+        }
+
+        public void Dispose()
         {
             Object.Destroy(_gameObject);
         }

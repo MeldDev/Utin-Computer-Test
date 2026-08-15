@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace UtinComputerTest.Infrastructure._Services.AddressablesLoader
+namespace UtinComputerTest.Infrastructure.Services.AddressableLoading
 {
     public readonly struct AddressableAssetLoadHandle<T> where T : Object
     {

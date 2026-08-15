@@ -1,6 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
-using UtinComputerTest.Infrastructure._Services.SceneLoader;
+using UtinComputerTest.Infrastructure.Services.SceneLoading;
 using UniRx;
 using UnityEngine;
 using Zenject;

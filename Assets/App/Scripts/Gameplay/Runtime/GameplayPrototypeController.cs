@@ -24,50 +24,38 @@ namespace UtinComputerTest.Gameplay.Runtime
     public sealed class GameplayPrototypeController : MonoBehaviour
     {
         private readonly CompositeDisposable _disposables = new();
-        private readonly List<ObstacleRuntime> _obstacles = new();
-        private readonly List<List<ObstacleRuntime>> _sectorObstacles = new();
-        private readonly Stack<ObstacleView> _obstaclePool = new();
         private GameplayConfig _gameplayConfig;
         private GameplayLevelSequence _levelSequence;
-        private GameplayAssets _gameplayAssets;
         private PlayerBallRuntime _player;
+        private PlayerMovementRuntime _playerMovementRuntime;
+        private GameplayLevelRuntime _levelRuntime;
         private PlayerPathService _playerPathService;
         private IGameplayFlowService _gameplayFlowService;
         private ProjectileRuntime _projectile;
         private ObstacleRuntime _projectileTarget;
-        private DoorRuntime _door;
-        private DoorView _doorView;
         private GeneratedGridLevelLayout _gridLayout;
-        private Transform _levelRoot;
-        private MapView _mapView;
         private GameplayDebugView _debugView;
         private GameplayCameraView _cameraView;
         private GameplayState _state;
         private int _levelIndex;
-        private int _sectorIndex;
         private bool _movingToDoor;
         private bool _reachedDoor;
         private bool _reachedMovementTarget;
-        private readonly List<Vector3> _movementPath = new();
-        private Vector3 _doorPosition;
-        private float _movementStartY;
-        private int _movementPathIndex;
         private string _movementBlockDebug = "Path not checked.";
 
         public void Initialize(GameplayConfig gameplayConfig, GameplayLevelSequence levelSequence, GameplayAssets gameplayAssets, GameplayDebugView debugView, GameplayCameraView cameraView, PlayerPathService playerPathService, IGameplayFlowService gameplayFlowService)
         {
             _gameplayConfig = gameplayConfig;
             _levelSequence = levelSequence;
-            _gameplayAssets = gameplayAssets;
             _debugView = debugView;
             _cameraView = cameraView;
-            _mapView = Instantiate(_gameplayAssets.MapPrefab);
-            _mapView.SetVisualYaw(_gameplayConfig.RoadVisualYaw);
-            _levelRoot = _mapView.GeneratedContentRoot;
-            var playerView = Instantiate(_gameplayAssets.PlayerPrefab, _mapView.transform);
-            _player = new PlayerBallRuntime(playerView, _gameplayConfig);
             _playerPathService = playerPathService;
             _gameplayFlowService = gameplayFlowService;
+            _levelRuntime = new GameplayLevelRuntime(_gameplayConfig, gameplayAssets, _playerPathService);
+            _levelRuntime.Initialize();
+            _player = _levelRuntime.Player;
+            _projectile = _levelRuntime.Projectile;
+            _playerMovementRuntime = new PlayerMovementRuntime(_player, _gameplayConfig);
             var input = gameObject.AddComponent<GameplayInputView>();
             input.Pressed.Subscribe(_ => BeginCharge()).AddTo(_disposables);
             input.Released.Subscribe(_ => ReleaseCharge()).AddTo(_disposables);
@@ -91,15 +79,16 @@ namespace UtinComputerTest.Gameplay.Runtime
                 TickPlayerMovement(Time.deltaTime);
             }
 
-            if (_movingToDoor && _door != null && Vector3.Distance(_player.Position, _doorPosition) <= _gameplayConfig.DoorOpenDistance)
+            if (_movingToDoor && _levelRuntime.Door != null && Vector3.Distance(_player.Position, _levelRuntime.DoorPosition) <= _gameplayConfig.DoorOpenDistance)
             {
-                _door.Open(Time.deltaTime);
+                _levelRuntime.Door.Open(Time.deltaTime);
             }
         }
 
         private void OnDestroy()
         {
             _disposables.Dispose();
+            _levelRuntime.Dispose();
         }
 
         private void OnGUI()
@@ -117,7 +106,7 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private void OnDrawGizmos()
         {
-            if (_playerPathService == null || _mapView == null || !_gameplayConfig.DrawNavigationDebugGrid)
+            if (_playerPathService == null || _levelRuntime == null || !_gameplayConfig.DrawNavigationDebugGrid)
             {
                 return;
             }
@@ -128,7 +117,7 @@ namespace UtinComputerTest.Gameplay.Runtime
                 for (var y = 0; y < gridSize.y; y++)
                 {
                     var cell = new Vector2Int(x, y);
-                    var position = _mapView.transform.TransformPoint(_playerPathService.GetCellCenter(cell, _gameplayConfig.NavigationDebugHeight));
+                    var position = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetCellCenter(cell, _gameplayConfig.NavigationDebugHeight));
                     if (_playerPathService.IsObstacleCell(cell))
                     {
                         Gizmos.color = new Color(1f, 0.15f, 0.15f, 0.45f);
@@ -145,16 +134,16 @@ namespace UtinComputerTest.Gameplay.Runtime
             Gizmos.color = Color.cyan;
             for (var x = 0; x <= gridSize.x; x++)
             {
-                var from = _mapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(x, 0), _gameplayConfig.NavigationDebugHeight));
-                var to = _mapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(x, gridSize.y), _gameplayConfig.NavigationDebugHeight));
+                var from = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(x, 0), _gameplayConfig.NavigationDebugHeight));
+                var to = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(x, gridSize.y), _gameplayConfig.NavigationDebugHeight));
                 Gizmos.DrawLine(from, to);
             }
 
             Gizmos.color = Color.cyan;
             for (var y = 0; y <= gridSize.y; y++)
             {
-                var from = _mapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(0, y), _gameplayConfig.NavigationDebugHeight));
-                var to = _mapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(gridSize.x, y), _gameplayConfig.NavigationDebugHeight));
+                var from = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(0, y), _gameplayConfig.NavigationDebugHeight));
+                var to = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetGridCorner(new Vector2Int(gridSize.x, y), _gameplayConfig.NavigationDebugHeight));
                 Gizmos.DrawLine(from, to);
             }
 
@@ -162,8 +151,8 @@ namespace UtinComputerTest.Gameplay.Runtime
             var movementCells = _playerPathService.MovementCells;
             for (var index = 1; index < movementCells.Count; index++)
             {
-                var from = _mapView.transform.TransformPoint(_playerPathService.GetCellCenter(movementCells[index - 1], _gameplayConfig.NavigationDebugHeight));
-                var to = _mapView.transform.TransformPoint(_playerPathService.GetCellCenter(movementCells[index], _gameplayConfig.NavigationDebugHeight));
+                var from = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetCellCenter(movementCells[index - 1], _gameplayConfig.NavigationDebugHeight));
+                var to = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetCellCenter(movementCells[index], _gameplayConfig.NavigationDebugHeight));
                 Gizmos.DrawLine(from, to);
             }
 
@@ -181,7 +170,7 @@ namespace UtinComputerTest.Gameplay.Runtime
                             continue;
                         }
 
-                        var position = _mapView.transform.TransformPoint(_playerPathService.GetCellCenter(new Vector2Int(x, y), _gameplayConfig.NavigationDebugHeight));
+                        var position = _levelRuntime.MapView.transform.TransformPoint(_playerPathService.GetCellCenter(new Vector2Int(x, y), _gameplayConfig.NavigationDebugHeight));
                         Gizmos.DrawCube(position, Vector3.one * 0.08f);
                     }
                 }
@@ -198,7 +187,6 @@ namespace UtinComputerTest.Gameplay.Runtime
             }
 
             _levelIndex = levelIndex;
-            _sectorIndex = 0;
             _movingToDoor = false;
             _reachedDoor = false;
             ClearLevel();
@@ -206,10 +194,10 @@ namespace UtinComputerTest.Gameplay.Runtime
             _gridLayout = new GridLevelLayoutGenerator(_gameplayConfig).Generate(levelConfig);
             _player.Reset(levelConfig.InitialEnergy);
             _player.SetPosition(_playerPathService.GetCellCenter(_playerPathService.GetStartCell(_gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f), 0.75f));
-            BuildLevel(_gridLayout);
+            _levelRuntime.Build(_gridLayout);
             _cameraView.FrameProgression(
-                _mapView.transform.TransformPoint(_player.Position),
-                _mapView.transform.TransformPoint(_doorPosition),
+                _levelRuntime.MapView.transform.TransformPoint(_player.Position),
+                _levelRuntime.MapView.transform.TransformPoint(_levelRuntime.DoorPosition),
                 _gameplayConfig.CameraPlayerViewportPosition,
                 _gameplayConfig.CameraDoorViewportPosition,
                 _gameplayConfig.CameraFieldPadding,
@@ -241,13 +229,7 @@ namespace UtinComputerTest.Gameplay.Runtime
                 return;
             }
 
-            var projectileObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            projectileObject.name = "Projectile";
-            projectileObject.transform.SetParent(_levelRoot);
-            projectileObject.transform.localPosition = _player.Position + Vector3.forward * 1.1f;
-            var projectileRenderer = projectileObject.GetComponent<Renderer>();
-            _projectile = new ProjectileRuntime(projectileObject, projectileRenderer, _gameplayConfig, _gameplayAssets);
-            _projectile.SetEnergy(0f);
+            _projectile.Prepare(_player.Position + Vector3.forward * _gameplayConfig.ProjectileSpawnDistance);
             LookAtClosestPathObstacle();
             _state = GameplayState.Charging;
         }
@@ -260,8 +242,7 @@ namespace UtinComputerTest.Gameplay.Runtime
 
             if (_player.Energy <= _gameplayConfig.MinimumPlayerEnergy)
             {
-                _projectile.Destroy();
-                _projectile = null;
+                _projectile.Deactivate();
                 Lose();
             }
         }
@@ -276,8 +257,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             if (_projectile.Energy < _gameplayConfig.MinimumShotEnergy)
             {
                 _player.Reset(_player.Energy + _projectile.Energy);
-                _projectile.Destroy();
-                _projectile = null;
+                _projectile.Deactivate();
                 _state = GameplayState.Idle;
                 return;
             }
@@ -299,7 +279,7 @@ namespace UtinComputerTest.Gameplay.Runtime
         private ObstacleRuntime LookAtClosestPathObstacle()
         {
             var playerRadius = _gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f;
-            var targetObstacle = _playerPathService.GetClosestPathObstacle(_obstacles, _player.Position, playerRadius);
+            var targetObstacle = _playerPathService.GetClosestPathObstacle(_levelRuntime.Obstacles, _player.Position, playerRadius);
             if (targetObstacle != null)
             {
                 _player.LookAt(targetObstacle.Position);
@@ -319,8 +299,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             if (hitObstacle != null)
             {
                 StartCoroutine(Infect(hitObstacle, _projectile.InfectionRadius));
-                _projectile.Destroy();
-                _projectile = null;
+                _projectile.Deactivate();
                 _projectileTarget = null;
                 _state = GameplayState.Infection;
                 return;
@@ -328,8 +307,7 @@ namespace UtinComputerTest.Gameplay.Runtime
 
             if (_projectile.Position.z > _gameplayConfig.NavigationFieldSize.y + 5f)
             {
-                _projectile.Destroy();
-                _projectile = null;
+                _projectile.Deactivate();
                 _projectileTarget = null;
                 _state = GameplayState.Idle;
                 CheckUnableToShoot();
@@ -349,7 +327,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             while (frontier.Count > 0)
             {
                 var current = frontier.Dequeue();
-                foreach (var neighbour in _obstacles.Where(obstacle => obstacle.State == ObstacleState.Normal && IsInsideInfectionRange(current, obstacle, infectionRadius)).ToArray())
+                foreach (var neighbour in _levelRuntime.Obstacles.Where(obstacle => obstacle.State == ObstacleState.Normal && IsInsideInfectionRange(current, obstacle, infectionRadius)).ToArray())
                 {
                     if (neighbour.Infect())
                     {
@@ -363,9 +341,7 @@ namespace UtinComputerTest.Gameplay.Runtime
             yield return new WaitForSeconds(_gameplayConfig.ExplosionDelay);
             foreach (var obstacle in infected)
             {
-                obstacle.Destroy();
-                _obstacles.Remove(obstacle);
-                _obstaclePool.Push(obstacle.View);
+                _levelRuntime.RecycleDestroyedObstacle(obstacle);
             }
 
             CheckSectorCleared();
@@ -373,11 +349,10 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private void CheckSectorCleared()
         {
-            if (TryBuildPathToNextTarget())
+            if (TryBuildPathToNextTarget(out var path))
             {
                 _movingToDoor = _reachedDoor;
-                _movementStartY = _player.Position.y;
-                _movementPathIndex = 0;
+                _playerMovementRuntime.Begin(path);
                 _state = GameplayState.PlayerMoving;
                 return;
             }
@@ -386,29 +361,27 @@ namespace UtinComputerTest.Gameplay.Runtime
             CheckUnableToShoot();
         }
 
-        private bool TryBuildPathToNextTarget()
+        private bool TryBuildPathToNextTarget(out IReadOnlyList<Vector3> path)
         {
             var playerRadius = _gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f;
-            _playerPathService.RebuildObstacleCells(_obstacles);
+            _playerPathService.RebuildObstacleCells(_levelRuntime.Obstacles);
             var targetCell = _playerPathService.GetDoorApproachCell(playerRadius);
-            if (!_playerPathService.TryBuildForwardMovement(_player.Position, targetCell, playerRadius, out var path, out _reachedMovementTarget))
+            if (!_playerPathService.TryBuildForwardMovement(_player.Position, targetCell, playerRadius, out path, out _reachedMovementTarget))
             {
                 _movementBlockDebug = $"Obstacle directly ahead. Player stops at {_playerPathService.GetCell(_player.Position)}.";
                 return false;
             }
 
-            _movementPath.Clear();
-            _movementPath.AddRange(path);
             _reachedDoor = _reachedMovementTarget;
             var occupiedRadius = _playerPathService.GetOccupiedRadiusInCells(playerRadius);
-            _movementBlockDebug = $"Straight jump: {_movementPath.Count} landing points. Player occupies {occupiedRadius.x * 2 + 1} x {occupiedRadius.y * 2 + 1} cells.";
+            _movementBlockDebug = $"Straight jump: {path.Count} landing points. Player occupies {occupiedRadius.x * 2 + 1} x {occupiedRadius.y * 2 + 1} cells.";
             return true;
         }
 
         private void CheckUnableToShoot()
         {
             var playerRadius = _gameplayConfig.GetPlayerScale(_player.Energy) * 0.5f;
-            if (_playerPathService.GetClosestPathObstacle(_obstacles, _player.Position, playerRadius) != null && _player.Energy < _gameplayConfig.MinimumShotEnergy)
+            if (_playerPathService.GetClosestPathObstacle(_levelRuntime.Obstacles, _player.Position, playerRadius) != null && _player.Energy < _gameplayConfig.MinimumShotEnergy)
             {
                 Lose();
             }
@@ -416,33 +389,14 @@ namespace UtinComputerTest.Gameplay.Runtime
 
         private void TickPlayerMovement(float deltaTime)
         {
-            var current = _player.Position;
-            var target = _movementPath[_movementPathIndex];
-            var next = Vector3.MoveTowards(current, target, _gameplayConfig.PlayerMoveSpeed * deltaTime);
-            var distance = Vector3.Distance(current, target);
-            next.y = _movementStartY + Mathf.Abs(Mathf.Sin(Time.time * 10f)) * _gameplayConfig.PlayerJumpHeight;
-            _player.SetPosition(next);
-
-            if (distance <= 0.08f)
+            if (_playerMovementRuntime.Tick(deltaTime))
             {
-                _player.SetPosition(new Vector3(target.x, _movementStartY, target.z));
-                _movementPathIndex++;
-                if (_movementPathIndex < _movementPath.Count)
-                {
-                    return;
-                }
-
                 if (_movingToDoor)
                 {
                     Win();
                 }
                 else
                 {
-                    if (_reachedMovementTarget)
-                    {
-                        _sectorIndex++;
-                    }
-
                     _state = GameplayState.Idle;
                     CheckUnableToShoot();
                 }
@@ -466,102 +420,13 @@ namespace UtinComputerTest.Gameplay.Runtime
             _gameplayFlowService.ReportLevelWon();
         }
 
-        private void BuildLevel(GeneratedGridLevelLayout layout)
-        {
-            _mapView.RoadView.SetLayout(
-                _gameplayConfig.NavigationFieldSize.x,
-                _gameplayConfig.NavigationFieldSize.y + _gameplayConfig.CameraVisualFieldExtension * 2f,
-                _gameplayConfig.NavigationFieldSize.y * 0.5f);
-
-            foreach (var sector in layout.Sectors)
-            {
-                var sectorObstacles = new List<ObstacleRuntime>();
-                foreach (var generatedObstacle in sector.Obstacles)
-                {
-                    var obstacleView = GetObstacleView();
-                    var cellWorldSize = _playerPathService.CellWorldSize;
-                    var worldSize = new Vector2(generatedObstacle.Footprint.x * cellWorldSize.x, generatedObstacle.Footprint.y * cellWorldSize.y);
-                    obstacleView.name = $"Obstacle {generatedObstacle.Footprint.x}x{generatedObstacle.Footprint.y}";
-                    obstacleView.SetLayer(generatedObstacle.BlocksPlayer ? _gameplayConfig.RequiredObstacleLayer : _gameplayConfig.DecorativeObstacleLayer);
-                    obstacleView.ResetVisual();
-                    obstacleView.SetPosition(_playerPathService.GetFootprintCenter(generatedObstacle.Anchor, generatedObstacle.Footprint, Mathf.Max(worldSize.x, worldSize.y) * 0.5f));
-                    obstacleView.SetScale(new Vector3(worldSize.x, Mathf.Max(worldSize.x, worldSize.y), worldSize.y));
-                    var obstacle = new ObstacleRuntime(obstacleView, Mathf.Max(worldSize.x, worldSize.y) * 0.5f, generatedObstacle.BlocksPlayer, generatedObstacle.IsPathTarget, generatedObstacle.Anchor, generatedObstacle.Footprint, _gameplayAssets.InfectedObstacleMaterial);
-                    _obstacles.Add(obstacle);
-                    sectorObstacles.Add(obstacle);
-                }
-
-                _sectorObstacles.Add(sectorObstacles);
-            }
-
-            var lastObstaclePosition = _obstacles.Max(obstacle => obstacle.Position.z);
-            _doorPosition = new Vector3(0f, 0.75f, lastObstaclePosition) + _gameplayConfig.DoorSpawnOffset;
-            _doorView = Instantiate(_gameplayAssets.DoorPrefab, _mapView.transform);
-            _doorView.SetPosition(_doorPosition);
-            _door = new DoorRuntime(_doorView);
-            _door.Reset();
-            _playerPathService.RebuildObstacleCells(_obstacles);
-        }
-
         private void ClearLevel()
         {
-            if (_projectile != null)
-            {
-                _projectile.Destroy();
-                _projectile = null;
-            }
+            _projectile.Deactivate();
 
             _projectileTarget = null;
 
-            if (_doorView != null)
-            {
-                Destroy(_doorView.gameObject);
-                _doorView = null;
-                _door = null;
-            }
-
-            foreach (var obstacle in _obstacles)
-            {
-                obstacle.View.gameObject.SetActive(false);
-                _obstaclePool.Push(obstacle.View);
-            }
-
-            _obstacles.Clear();
-            _sectorObstacles.Clear();
-        }
-
-        private ObstacleView GetObstacleView()
-        {
-            if (_obstaclePool.TryPop(out var obstacleView))
-            {
-                obstacleView.gameObject.SetActive(true);
-                obstacleView.transform.SetParent(_levelRoot);
-                return obstacleView;
-            }
-
-            return Instantiate(_gameplayAssets.ObstaclePrefab, _levelRoot);
-        }
-
-        private void SpawnDecorativeObstacles(GeneratedCluster cluster, float roadWidth, float playerRadius)
-        {
-            var random = new System.Random(Mathf.RoundToInt(cluster.ExpectedEnergy * 1000f) + _levelIndex);
-            var count = random.Next(_gameplayConfig.DecorativeObstaclesPerCluster.x, _gameplayConfig.DecorativeObstaclesPerCluster.y + 1);
-            for (var index = 0; index < count; index++)
-            {
-                var angle = (float)random.NextDouble() * Mathf.PI * 2f;
-                var distance = Mathf.Lerp(_gameplayConfig.DecorativeObstacleOffsetRange.x, _gameplayConfig.DecorativeObstacleOffsetRange.y, (float)random.NextDouble());
-                var position = cluster.ObstaclePositions[random.Next(cluster.ObstaclePositions.Count)] + new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle)) * distance;
-                var minimumSideOffset = playerRadius + _gameplayConfig.ObstacleRadius + _gameplayConfig.PlayerObstacleClearance;
-                var side = position.x >= 0f ? 1f : -1f;
-                position.x = side * Mathf.Clamp(Mathf.Abs(position.x), minimumSideOffset, roadWidth * 0.5f - _gameplayConfig.ObstacleRadius);
-                var obstacleView = GetObstacleView();
-                obstacleView.name = "Decorative Obstacle";
-                obstacleView.SetLayer(_gameplayConfig.DecorativeObstacleLayer);
-                obstacleView.ResetVisual();
-                obstacleView.SetPosition(position);
-                obstacleView.SetScale(_gameplayConfig.ObstacleRadius * 1.5f);
-                _obstacles.Add(new ObstacleRuntime(obstacleView, _gameplayConfig.ObstacleRadius * 0.75f, false, false, Vector2Int.zero, Vector2Int.one, _gameplayAssets.InfectedObstacleMaterial));
-            }
+            _levelRuntime.Clear();
         }
 
         private static bool IsInsideInfectionRange(ObstacleRuntime sourceObstacle, ObstacleRuntime targetObstacle, float infectionRadius)

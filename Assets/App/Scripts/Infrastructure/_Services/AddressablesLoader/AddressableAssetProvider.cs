@@ -8,7 +8,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Debug = UnityEngine.Debug;
 
-namespace UtinComputerTest.Infrastructure._Services.AddressablesLoader
+namespace UtinComputerTest.Infrastructure.Services.AddressableLoading
 {
     public class AddressableAssetProvider : IAddressableAssetProvider
     {

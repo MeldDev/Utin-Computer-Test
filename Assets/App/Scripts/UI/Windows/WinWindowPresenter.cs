@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UniRx;
 using UtinComputerTest.Gameplay.Runtime;
-using UtinComputerTest.Infrastructure._Services.SceneLoader;
+using UtinComputerTest.Infrastructure.Services.SceneLoading;
 using Zenject;
 
 namespace UtinComputerTest.UI.Windows

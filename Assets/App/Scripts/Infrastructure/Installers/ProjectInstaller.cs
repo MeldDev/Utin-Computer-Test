@@ -1,5 +1,5 @@
-using UtinComputerTest.Infrastructure._Services.AddressablesLoader;
-using UtinComputerTest.Infrastructure._Services.SceneLoader;
+using UtinComputerTest.Infrastructure.Services.AddressableLoading;
+using UtinComputerTest.Infrastructure.Services.SceneLoading;
 using UtinComputerTest.Infrastructure.StateMachine;
 using UtinComputerTest.Infrastructure.StateMachine.States.Project;
 using UtinComputerTest.ScriptableObjects;
