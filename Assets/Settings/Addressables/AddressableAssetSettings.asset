@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: ee3e56b2a61dbfd469f23f3939194c12
   m_currentHash:
     serializedVersion: 2
-    Hash: 707d95a2cf557caf7c515d43de874cd7
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -61,26 +61,16 @@ MonoBehaviour:
   m_BuildAddressablesWithPlayerBuild: 1
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
-  - {fileID: 11400000, guid: ca4dd071f33deba48b3d6f99423784bf, type: 2}
-  - {fileID: 11400000, guid: 2b5a20af7ec5acc4ca790cde39bbeb18, type: 2}
   - {fileID: 11400000, guid: 809c08b25326e0f4092a2814cbce1afd, type: 2}
-  - {fileID: 11400000, guid: 5bd5d1753e5fe3d44b5e250427356db4, type: 2}
-  - {fileID: 11400000, guid: b453477fe0f53e6429d36295591e4edb, type: 2}
   - {fileID: 11400000, guid: 8215a0aba7e9b2a45a709c289615ba8b, type: 2}
-  - {fileID: 11400000, guid: 81a7a932ab8a9394887b1b45a3252312, type: 2}
   - {fileID: 11400000, guid: 4ede4da7940281f4ebf86b87228ea1f0, type: 2}
-  - {fileID: 11400000, guid: 1e6c166efa138bf448d29f95ed103d6a, type: 2}
-  - {fileID: 11400000, guid: 81aa79341a288714ebe8e2bb1db4420e, type: 2}
   - {fileID: 11400000, guid: 4ec21381a7a4040429e46cd5b570361b, type: 2}
   - {fileID: 11400000, guid: 6a5b0fe143552af429e5fb092bdd2c05, type: 2}
-  - {fileID: 11400000, guid: dc4dc00856b0eb547ad461f0b56e7350, type: 2}
   - {fileID: 11400000, guid: b98502d9149cfb749bcdf37abaefa576, type: 2}
   - {fileID: 11400000, guid: bf32f69a9d776564d8f3bc8ea9549ec3, type: 2}
   - {fileID: 11400000, guid: 77ec8a499649c74498ea973e5e53ea9d, type: 2}
   - {fileID: 11400000, guid: c2e098978f5180645960c78775fc0d48, type: 2}
   - {fileID: 11400000, guid: 17f3f9c8c1ca00246a7073ad2df122be, type: 2}
-  - {fileID: 11400000, guid: 75dce50cd027b2f45ab95c16ab1fa2b9, type: 2}
-  - {fileID: 11400000, guid: 1612650a3c85e6c4d95e58ec65ae3f2b, type: 2}
   - {fileID: 11400000, guid: 684c9b01ee5604c94bbb7d366f7918f5, type: 2}
   - {fileID: 11400000, guid: 95840d7fc95e11943934b8b084cddaf2, type: 2}
   m_BuildSettings:
